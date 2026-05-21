@@ -157,9 +157,9 @@ Possui documentos: ${formData.document}`;
           {step === 1 && (
             <div className="space-y-6 animate-fade-in">
               <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 1 de 5</span>
-              <h3 className="text-3xl font-title text-aline-dark">Qual é o tema principal do seu caso?</h3>
+              <h3 className="text-3xl font-title text-aline-dark">Qual destas ameaças ao seu patrimônio está tirando o seu sono hoje?</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                {['Regularização / Usucapião', 'Conflito com Construtora (Atraso/Distrato)', 'Problemas com Leilão', 'Compra e Venda Segura (Preventivo)', 'Direito do Consumidor', 'Outro (Família/Inventário)'].map((theme) => (
+                {['Imóvel Irregular (Insegurança da posse)', 'Construtora cobrando juros/taxas abusivas', 'Ameaça de Leilão ou Perda do Imóvel', 'Medo de cair em golpe ao comprar imóvel', 'Outro risco urgente'].map((theme) => (
                   <button key={theme} onClick={() => handleNext('theme', theme)} className="p-4 text-left border-2 border-stone-200 rounded-xl hover:border-aline-dark hover:bg-aline-bgDark transition-all text-stone-700 font-medium">
                     {theme}
                   </button>
@@ -171,9 +171,9 @@ Possui documentos: ${formData.document}`;
           {step === 2 && (
             <div className="space-y-6 animate-fade-in">
               <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 2 de 5</span>
-              <h3 className="text-3xl font-title text-aline-dark">Há quanto tempo esse problema existe?</h3>
+              <h3 className="text-3xl font-title text-aline-dark">A Justiça não perdoa quem dorme no ponto. Há quanto tempo você corre esse risco?</h3>
               <div className="flex flex-col gap-4 mt-6">
-                {['Menos de 3 meses', 'De 3 meses a 1 ano', 'Mais de 1 ano', 'Ainda é preventivo (fechando negócio)'].map((time) => (
+                {['Menos de 3 meses', 'O tempo está passando (3 a 12 meses)', 'Há anos (Risco Máximo)'].map((time) => (
                   <button key={time} onClick={() => handleNext('time', time)} className="p-4 text-left border-2 border-stone-200 rounded-xl hover:border-aline-dark hover:bg-aline-bgDark transition-all text-stone-700 font-medium">
                     {time}
                   </button>
@@ -185,9 +185,9 @@ Possui documentos: ${formData.document}`;
           {step === 3 && (
             <div className="space-y-6 animate-fade-in">
               <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 3 de 5</span>
-              <h3 className="text-3xl font-title text-aline-dark">Qual a sua maior preocupação hoje?</h3>
+              <h3 className="text-3xl font-title text-aline-dark">Se você não resolver isso logo, qual é o pior cenário para a sua vida e da sua família?</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                {['Perder o imóvel / patrimônio', 'Pagar taxas abusivas', 'Ficar com o nome sujo', 'Não conseguir documentar a posse', 'Assinar um contrato ruim'].map((concern) => (
+                {['Perder o imóvel e o dinheiro investido', 'Pagar uma dívida infinita e abusiva', 'Ficar com nome sujo e bens bloqueados', 'Comprar um problema e não um lar'].map((concern) => (
                   <button key={concern} onClick={() => handleNext('concern', concern)} className="p-4 text-left border-2 border-stone-200 rounded-xl hover:border-aline-dark hover:bg-aline-bgDark transition-all text-stone-700 font-medium">
                     {concern}
                   </button>
@@ -199,9 +199,9 @@ Possui documentos: ${formData.document}`;
           {step === 4 && (
             <div className="space-y-6 animate-fade-in">
               <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 4 de 5</span>
-              <h3 className="text-3xl font-title text-aline-dark">Você possui documentos ou contratos relacionados ao caso?</h3>
+              <h3 className="text-3xl font-title text-aline-dark">O mercado imobiliário destrói amadores. Você já tentou resolver isso sozinho ou com profissionais genéricos?</h3>
               <div className="flex flex-col gap-4 mt-6">
-                {['Sim, tenho tudo documentado', 'Tenho apenas conversas (WhatsApp/Email)', 'Não tenho documentos', 'Não sei avaliar'].map((doc) => (
+                {['Sim, e o problema só piorou', 'Não, sei que preciso da melhor proteção desde o início'].map((doc) => (
                   <button key={doc} onClick={() => handleNext('document', doc)} className="p-4 text-left border-2 border-stone-200 rounded-xl hover:border-aline-dark hover:bg-aline-bgDark transition-all text-stone-700 font-medium">
                     {doc}
                   </button>
@@ -219,11 +219,11 @@ Possui documentos: ${formData.document}`;
               <form onSubmit={handleSubmit} className="space-y-4 mt-6">
                 <div>
                   <label className="block text-sm font-bold text-aline-dark mb-1">Nome Completo</label>
-                  <input required type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full p-4 border-2 border-stone-200 rounded-xl focus:outline-none focus:border-aline-dark transition-colors bg-stone-50" placeholder="Ex: João da Silva" />
+                  <input required type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full p-4 border-2 border-stone-200 rounded-xl focus:outline-none focus:border-aline-dark transition-colors bg-stone-50 text-stone-800 placeholder-stone-400" placeholder="Ex: João da Silva" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-aline-dark mb-1">WhatsApp com DDD</label>
-                  <input required type="text" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full p-4 border-2 border-stone-200 rounded-xl focus:outline-none focus:border-aline-dark transition-colors bg-stone-50" placeholder="(11) 99999-9999" />
+                  <input required type="text" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full p-4 border-2 border-stone-200 rounded-xl focus:outline-none focus:border-aline-dark transition-colors bg-stone-50 text-stone-800 placeholder-stone-400" placeholder="(11) 99999-9999" />
                 </div>
                 <button type="submit" className="w-full mt-4 px-10 py-4 bg-aline-dark text-aline-bg font-bold rounded-xl hover:bg-aline-light transition-all duration-300">
                   Gerar Minha Análise Jurídica
@@ -246,19 +246,25 @@ Possui documentos: ${formData.document}`;
 
           {step === 7 && (
             <div className="text-center space-y-6 animate-fade-in">
-              <div className="w-20 h-20 bg-aline-light/20 text-aline-dark rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
-                <iconify-icon icon="solar:shield-check-bold-duotone" class="text-5xl"></iconify-icon>
+              <div className="w-20 h-20 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner animate-pulse">
+                <iconify-icon icon="solar:danger-triangle-bold-duotone" class="text-5xl"></iconify-icon>
               </div>
-              <h3 className="text-4xl font-title font-bold text-aline-dark">Seu Patrimônio Pode Ser Salvo.</h3>
+              <h3 className="text-4xl font-title font-bold text-aline-dark">🚨 ALERTA VERMELHO: Mas Há Uma Saída Estratégica.</h3>
               <p className="text-lg text-stone-600 font-body">
-                Com base no seu cenário sobre <strong>{formData.theme}</strong>, nossa análise indica que <strong className="text-aline-dark">é possível reverter os riscos e proteger seus direitos</strong> se agirmos estrategicamente agora.
+                Nossa análise indicou que o risco de <strong className="text-aline-dark">{formData.concern.toLowerCase()}</strong> é gravíssimo. 
               </p>
-              <div className="p-6 bg-stone-50 border border-stone-200 rounded-xl mt-6 mb-6 text-left">
-                <p className="text-sm text-stone-800 leading-relaxed font-medium">A Dra. Aline já estruturou a proteção de dezenas de clientes em situações idênticas à sua. Não perca prazos decisivos. Fale diretamente com ela agora para executar o seu plano de ação.</p>
+              <div className="p-6 bg-stone-50 border-l-4 border-red-500 rounded-r-xl mt-6 mb-6 text-left shadow-sm">
+                <p className="text-sm text-stone-800 leading-relaxed font-medium mb-3">
+                  Bancos, construtoras e golpistas usam o seu desconhecimento contra você. A cada dia que passa sem uma blindagem jurídica perante este risco de <strong className="text-aline-dark">{formData.theme.toLowerCase()}</strong>, você está essencialmente entregando o seu patrimônio para eles.
+                </p>
+                <p className="text-sm text-stone-800 leading-relaxed font-bold">
+                  A boa notícia: A Dra. Aline possui o mapa exato para neutralizar esse risco. Ela já resgatou a segurança de clientes em cenários idênticos ao seu, utilizando teses jurídicas avançadas que profissionais genéricos desconhecem.
+                </p>
               </div>
+              <p className="text-md text-stone-600 font-body mb-2 italic">O diagnóstico está claro. A solução existe. O próximo passo só depende de você.</p>
               <a href={generateWhatsAppUrl()} target="_blank" rel="noreferrer" className="inline-block mt-4 w-full px-10 py-5 bg-[#25D366] text-white font-bold rounded-xl shadow-xl hover:bg-[#1ebd5a] transition-all duration-300 flex items-center justify-center gap-3 text-lg hover:-translate-y-1">
                 <iconify-icon icon="mdi:whatsapp" class="text-3xl"></iconify-icon>
-                Quero Falar com a Dra. Aline
+                Falar com a Dra. Aline Agora
               </a>
             </div>
           )}
