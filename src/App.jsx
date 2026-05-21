@@ -70,7 +70,7 @@ const DiagnosticQuiz = () => {
     if (formErrors.phone) setFormErrors({ ...formErrors, phone: '' });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let hasError = false;
     let errors = { name: '', phone: '' };
@@ -93,6 +93,25 @@ const DiagnosticQuiz = () => {
 
     setStep(step + 1);
     setIsAnalyzing(true);
+
+    try {
+      await fetch('https://hook.us2.make.com/itscznuozrsmv6at7rg82anx5kga85x6', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nome: formData.name,
+          whatsapp: formData.phone,
+          tema: formData.theme,
+          tempo: formData.time,
+          dor: formData.concern,
+          documento: formData.document,
+          data_hora: new Date().toISOString()
+        })
+      });
+    } catch (error) {
+      console.error("Erro ao enviar webhook:", error);
+    }
+
     setTimeout(() => {
       setIsAnalyzing(false);
       setStep(step + 2);
