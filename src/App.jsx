@@ -281,6 +281,25 @@ function App() {
   const whatsappUrl = "https://wa.me/5521966509969?text=Olá Dra. Aline, gostaria de realizar um diagnóstico gratuito do meu caso.";
   const carouselRef = useRef(null);
   const [userCity, setUserCity] = useState('');
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    let interval;
+    if (!isHovered) {
+      interval = setInterval(() => {
+        if (carouselRef.current) {
+          const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+          // If we reached the end, loop back to start
+          if (scrollLeft + clientWidth >= scrollWidth - 10) {
+            carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            carouselRef.current.scrollBy({ left: 350, behavior: 'smooth' });
+          }
+        }
+      }, 3000);
+    }
+    return () => clearInterval(interval);
+  }, [isHovered]);
 
   useEffect(() => {
     fetch('https://ipapi.co/json/')
@@ -585,7 +604,13 @@ function App() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative group w-full">
+        <div 
+          className="relative group w-full"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
+          onTouchEnd={() => setIsHovered(false)}
+        >
             {/* Left Button */}
             <button 
               onClick={() => scrollCarousel('left')}
