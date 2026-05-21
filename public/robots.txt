@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lucaslocolukinhasrafael-dotcom.github.io/aline/sitemap.xml
