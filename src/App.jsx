@@ -560,8 +560,8 @@ function App() {
       </section>
 
       {/* GMB Reviews Section (Prova Social - CARROSSEL) */}
-      <section id="depoimentos" className="py-24 px-6 md:px-12 bg-stone-50 border-t border-stone-200 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto">
+      <section id="depoimentos" className="py-24 bg-stone-50 border-t border-stone-200 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
             <div className="text-center mb-12">
                 <div className="flex items-center justify-center gap-2 mb-4">
                     <iconify-icon icon="logos:google-icon" class="text-3xl"></iconify-icon>
@@ -576,13 +576,14 @@ function App() {
                 <h3 className="text-4xl md:text-5xl font-title font-bold text-aline-dark">Avaliações Reais de Clientes</h3>
                 <p className="text-lg text-stone-600 mt-4">As 21 pessoas que confiaram e tiveram seu patrimônio protegido pela Dra. Aline.</p>
             </div>
+        </div>
 
-            {/* Carousel Container */}
-            <div className="relative group">
-                {/* Left Button */}
-                <button 
-                  onClick={() => scrollCarousel('left')}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur shadow-xl border border-stone-100 text-aline-dark hover:text-white hover:bg-aline-light w-12 h-12 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 -ml-4 md:-ml-6"
+        {/* Carousel Container */}
+        <div className="relative group w-full">
+            {/* Left Button */}
+            <button 
+              onClick={() => scrollCarousel('left')}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur shadow-xl border border-stone-100 text-aline-dark hover:text-white hover:bg-aline-light w-12 h-12 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 md:left-12"
                 >
                   <iconify-icon icon="solar:alt-arrow-left-linear" class="text-2xl"></iconify-icon>
                 </button>
@@ -590,7 +591,7 @@ function App() {
                 {/* Tracks */}
                 <div 
                   ref={carouselRef}
-                  className="flex gap-6 overflow-x-auto snap-x snap-mandatory py-8 px-4 md:px-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
+                  className="flex gap-6 overflow-x-auto snap-x snap-mandatory py-8 px-6 md:px-12 xl:px-24 2xl:px-48 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
                 >
                     {googleReviews.map((review, idx) => {
                         // Determine random background colors for avatars based on index to keep it colorful
@@ -634,7 +635,7 @@ function App() {
                 {/* Right Button */}
                 <button 
                   onClick={() => scrollCarousel('right')}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur shadow-xl border border-stone-100 text-aline-dark hover:text-white hover:bg-aline-light w-12 h-12 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 -mr-4 md:-mr-6"
+                  className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur shadow-xl border border-stone-100 text-aline-dark hover:text-white hover:bg-aline-light w-12 h-12 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
                 >
                   <iconify-icon icon="solar:alt-arrow-right-linear" class="text-2xl"></iconify-icon>
                 </button>
