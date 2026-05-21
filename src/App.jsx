@@ -45,6 +45,7 @@ const googleReviews = [
 const DiagnosticQuiz = () => {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({ theme: '', time: '', concern: '', document: '', name: '', phone: '' });
+  const [formErrors, setFormErrors] = useState({ name: '', phone: '' });
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   const handleNext = (key, value) => {
@@ -52,8 +53,44 @@ const DiagnosticQuiz = () => {
     setStep(step + 1);
   };
 
+  const maskPhone = (value) => {
+    let v = value.replace(/\D/g, ''); 
+    if (v.length > 11) v = v.substring(0, 11);
+    
+    if (v.length === 0) return '';
+    if (v.length <= 2) return `(${v}`;
+    if (v.length <= 6) return `(${v.substring(0, 2)}) ${v.substring(2)}`;
+    if (v.length <= 10) return `(${v.substring(0, 2)}) ${v.substring(2, 6)}-${v.substring(6)}`;
+    return `(${v.substring(0, 2)}) ${v.substring(2, 7)}-${v.substring(7)}`;
+  };
+
+  const handlePhoneChange = (e) => {
+    const masked = maskPhone(e.target.value);
+    setFormData({ ...formData, phone: masked });
+    if (formErrors.phone) setFormErrors({ ...formErrors, phone: '' });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    let hasError = false;
+    let errors = { name: '', phone: '' };
+
+    if (formData.name.trim().length < 3) {
+      errors.name = 'Por favor, insira seu nome e sobrenome.';
+      hasError = true;
+    }
+    
+    const rawPhone = formData.phone.replace(/\D/g, '');
+    if (rawPhone.length < 10) {
+      errors.phone = 'Insira um número de WhatsApp válido com DDD.';
+      hasError = true;
+    }
+
+    if (hasError) {
+      setFormErrors(errors);
+      return;
+    }
+
     setStep(step + 1);
     setIsAnalyzing(true);
     setTimeout(() => {
@@ -219,11 +256,13 @@ Possui documentos: ${formData.document}`;
               <form onSubmit={handleSubmit} className="space-y-4 mt-6">
                 <div>
                   <label className="block text-sm font-bold text-aline-dark mb-1">Nome Completo</label>
-                  <input required type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full p-4 border-2 border-stone-200 rounded-xl focus:outline-none focus:border-aline-dark transition-colors bg-stone-50 text-stone-800 placeholder-stone-400" placeholder="Ex: João da Silva" />
+                  <input required type="text" value={formData.name} onChange={e => { setFormData({...formData, name: e.target.value}); if(formErrors.name) setFormErrors({...formErrors, name: ''}); }} className={`w-full p-4 border-2 ${formErrors.name ? 'border-red-500' : 'border-stone-200'} rounded-xl focus:outline-none focus:border-aline-dark transition-colors bg-stone-50 text-stone-800 placeholder-stone-400`} placeholder="Ex: João da Silva" />
+                  {formErrors.name && <p className="text-red-500 text-xs mt-1 font-semibold">{formErrors.name}</p>}
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-aline-dark mb-1">WhatsApp com DDD</label>
-                  <input required type="text" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full p-4 border-2 border-stone-200 rounded-xl focus:outline-none focus:border-aline-dark transition-colors bg-stone-50 text-stone-800 placeholder-stone-400" placeholder="(11) 99999-9999" />
+                  <input required type="text" value={formData.phone} onChange={handlePhoneChange} className={`w-full p-4 border-2 ${formErrors.phone ? 'border-red-500' : 'border-stone-200'} rounded-xl focus:outline-none focus:border-aline-dark transition-colors bg-stone-50 text-stone-800 placeholder-stone-400`} placeholder="(11) 99999-9999" />
+                  {formErrors.phone && <p className="text-red-500 text-xs mt-1 font-semibold">{formErrors.phone}</p>}
                 </div>
                 <button type="submit" className="w-full mt-4 px-10 py-4 bg-aline-dark text-aline-bg font-bold rounded-xl hover:bg-aline-light transition-all duration-300">
                   Gerar Minha Análise Jurídica
