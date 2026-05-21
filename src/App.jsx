@@ -105,7 +105,7 @@ const DiagnosticQuiz = () => {
           tempo: formData.time,
           dor: formData.concern,
           documento: formData.document,
-          data_hora: new Date().toISOString()
+          data_hora: new Date().toLocaleString('pt-BR')
         })
       });
     } catch (error) {
