@@ -148,7 +148,7 @@ Possui documentos: ${formData.document}`;
       {/* Modal Wrapper para o Quiz Ativo */}
       {step > 0 && (
         <div className="fixed inset-0 z-[100] bg-aline-dark/90 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in overflow-y-auto">
-          <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-aline-light/30 my-8">
+          <div className="relative w-full max-w-2xl bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-white/50 my-8">
             <button onClick={() => setStep(0)} className="absolute top-6 right-6 text-stone-400 hover:text-aline-dark transition-colors z-10">
               <iconify-icon icon="solar:close-circle-linear" class="text-3xl"></iconify-icon>
             </button>
@@ -328,9 +328,9 @@ function App() {
       </div>
 
       {/* Navigation */}
-      <nav className="hidden md:flex sticky top-0 z-50 w-full px-8 py-5 justify-between items-center bg-aline-bg/90 backdrop-blur-sm border-b border-stone-200/50 transition-all duration-300 relative">
+      <nav className="hidden md:flex sticky top-0 z-50 w-full px-8 py-3 justify-between items-center bg-white/70 backdrop-blur-md border-b border-white/50 shadow-sm transition-all duration-300 relative">
         <div className="flex items-center gap-3">
-          <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-20 md:h-24 w-auto drop-shadow-sm" />
+          <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-12 md:h-16 w-auto drop-shadow-sm" />
         </div>
 
         <div className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-stone-600 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -489,7 +489,7 @@ function App() {
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between">
+                    <div className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/60 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
                         <div>
                             <div className="w-12 h-12 bg-green-100 text-green-700 rounded-full flex items-center justify-center mb-6">
                                 <iconify-icon icon="solar:shield-check-bold" class="text-2xl"></iconify-icon>
@@ -500,7 +500,7 @@ function App() {
                         <span className="text-xs font-bold text-stone-400 uppercase tracking-wider">— Caso de Sucesso Omitido*</span>
                     </div>
 
-                    <div className="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between">
+                    <div className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/60 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
                         <div>
                             <div className="w-12 h-12 bg-aline-light/20 text-aline-dark rounded-full flex items-center justify-center mb-6">
                                 <iconify-icon icon="solar:wad-of-money-bold" class="text-2xl"></iconify-icon>
@@ -511,7 +511,7 @@ function App() {
                         <span className="text-xs font-bold text-stone-400 uppercase tracking-wider">— Caso de Sucesso Omitido*</span>
                     </div>
 
-                    <div className="bg-white p-8 rounded-2xl shadow-sm border border-stone-100 flex flex-col justify-between">
+                    <div className="bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/60 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
                         <div>
                             <div className="w-12 h-12 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center mb-6">
                                 <iconify-icon icon="solar:home-bold" class="text-2xl"></iconify-icon>
@@ -528,7 +528,7 @@ function App() {
       </section>
 
       {/* 3. Services Grid (The Offer) */}
-      <section id="solucoes" className="py-20 px-6 md:px-12 border-t border-stone-200">
+      <section id="solucoes" className="py-20 px-6 md:px-12 border-t border-stone-200 bg-gradient-to-br from-[#F8F7F3] to-[#EAE7DF]">
         <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                 <div>
@@ -539,7 +539,7 @@ function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Card 1 */}
-                <div className="group bg-aline-bgDark p-8 md:p-10 rounded-2xl hover:bg-[#E5E1D8] transition-colors duration-300 cursor-pointer">
+                <div className="group bg-white/40 backdrop-blur-md border border-white/60 p-8 md:p-10 rounded-2xl hover:bg-white/60 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
                     <div className="w-12 h-12 bg-aline-dark text-aline-bg rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                         <iconify-icon icon="solar:home-angle-linear" class="text-2xl"></iconify-icon>
                     </div>
@@ -553,7 +553,7 @@ function App() {
                 </div>
 
                 {/* Card 2 */}
-                <div className="group bg-aline-bgDark p-8 md:p-10 rounded-2xl hover:bg-[#E5E1D8] transition-colors duration-300 cursor-pointer">
+                <div className="group bg-white/40 backdrop-blur-md border border-white/60 p-8 md:p-10 rounded-2xl hover:bg-white/60 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
                     <div className="w-12 h-12 bg-aline-dark text-aline-bg rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                         <iconify-icon icon="solar:danger-triangle-linear" class="text-2xl"></iconify-icon>
                     </div>
@@ -633,7 +633,7 @@ function App() {
                         return (
                           <div 
                             key={idx} 
-                            className="min-w-[300px] max-w-[300px] md:min-w-[380px] md:max-w-[380px] snap-center bg-white p-6 md:p-8 rounded-2xl shadow-md shadow-stone-200/50 border border-stone-200 flex flex-col justify-between shrink-0 transform transition-transform hover:-translate-y-2"
+                            className="min-w-[300px] max-w-[300px] md:min-w-[380px] md:max-w-[380px] snap-center bg-white/70 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-xl shadow-stone-200/30 border border-white/60 flex flex-col justify-between shrink-0 transform transition-transform hover:-translate-y-2"
                           >
                               <div>
                                   <div className="flex items-center gap-4 mb-5">
