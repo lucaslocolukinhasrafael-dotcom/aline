@@ -72,16 +72,77 @@ Possui documentos: ${formData.document}`;
   };
 
   return (
-    <section id="diagnostico" className="py-24 px-6 md:px-12 border-t border-stone-200 bg-aline-bgDark">
-      <div className="max-w-4xl mx-auto text-center space-y-6">
-        <div className="w-16 h-16 bg-aline-dark text-aline-bg rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-aline-light/20">
-          <iconify-icon icon="solar:magnifier-linear" class="text-3xl"></iconify-icon>
+    <section id="diagnostico" className="py-24 px-6 md:px-12 bg-aline-dark text-aline-bg relative overflow-hidden rounded-t-[3rem] shadow-2xl">
+      {/* Background shapes */}
+      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-aline-dark via-[#2a1c12] to-black -z-10"></div>
+      
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 relative">
+        {/* PAS Copy Block */}
+        <div className="space-y-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 text-red-400 text-sm font-bold tracking-wide border border-red-500/20">
+            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+            Aviso de Risco Iminente
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-title font-bold leading-tight">
+            Seu patrimônio está em risco. O tempo está <span className="text-red-400">contra você.</span>
+          </h2>
+          <p className="text-lg md:text-xl text-stone-300 font-body leading-relaxed">
+            Construtoras, bancos e leiloeiros possuem exércitos de advogados trabalhando para proteger o lucro <strong className="text-white font-bold">deles</strong>, não os seus direitos. Esperar para ver o que acontece é a receita certa para perder o que você demorou uma vida para construir.
+          </p>
+          
+          <ul className="space-y-4 pt-4">
+            <li className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-aline-light/20 flex items-center justify-center text-aline-light mt-1">
+                <iconify-icon icon="solar:target-linear" class="text-xl"></iconify-icon>
+              </div>
+              <div>
+                <strong className="text-white block text-lg font-bold">Clareza Imediata</strong>
+                <span className="text-stone-400 font-medium">Descubra a gravidade real do seu problema hoje, sem jargões jurídicos.</span>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-aline-light/20 flex items-center justify-center text-aline-light mt-1">
+                <iconify-icon icon="solar:stopwatch-linear" class="text-xl"></iconify-icon>
+              </div>
+              <div>
+                <strong className="text-white block text-lg font-bold">Análise de Urgência</strong>
+                <span className="text-stone-400 font-medium">Saiba exatamente se o seu caso exige uma liminar nas próximas 24 horas.</span>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-aline-light/20 flex items-center justify-center text-aline-light mt-1">
+                <iconify-icon icon="solar:shield-check-linear" class="text-xl"></iconify-icon>
+              </div>
+              <div>
+                <strong className="text-white block text-lg font-bold">Estratégia de Blindagem</strong>
+                <span className="text-stone-400 font-medium">Entenda o caminho exato para proteger seus bens e recuperar seu dinheiro.</span>
+              </div>
+            </li>
+          </ul>
         </div>
-        <h3 className="text-4xl md:text-5xl font-title font-bold text-aline-dark">Descubra os Riscos do Seu Caso</h3>
-        <p className="text-lg md:text-xl text-stone-600 font-body max-w-2xl mx-auto">Problemas imobiliários podem custar o patrimônio de uma vida. Não fique na dúvida. Responda a este diagnóstico rápido (1 minuto) e descubra se o seu caso exige intervenção jurídica imediata.</p>
-        <button onClick={() => setStep(1)} className="inline-block mt-8 px-10 py-5 bg-aline-dark text-aline-bg font-bold rounded-full hover:bg-aline-light hover:text-white transition-all duration-300 shadow-2xl hover:shadow-aline-dark/40 hover:-translate-y-1 text-lg">
-          Iniciar Diagnóstico Gratuito
-        </button>
+
+        {/* Action Box */}
+        <div className="bg-aline-bg text-aline-dark p-8 md:p-12 rounded-3xl shadow-2xl relative border border-aline-light/20">
+          <div className="absolute -top-6 -right-6 w-24 h-24 bg-aline-light rounded-full opacity-20 blur-2xl"></div>
+          <div className="text-center space-y-6 relative z-10">
+            <div className="w-16 h-16 bg-aline-dark text-aline-light rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg shadow-aline-light/20">
+              <iconify-icon icon="solar:document-text-linear" class="text-3xl"></iconify-icon>
+            </div>
+            <h3 className="text-3xl font-title font-bold">Diagnóstico Estratégico Gratuito</h3>
+            <p className="text-stone-600 font-medium font-body leading-relaxed">
+              Responda a 4 perguntas rápidas (menos de 1 minuto) e descubra as chances reais do seu caso.
+            </p>
+            <div className="pt-4">
+              <button onClick={() => setStep(1)} className="w-full py-5 bg-gradient-to-r from-aline-dark to-[#8a723b] text-white font-bold rounded-xl hover:shadow-xl hover:shadow-aline-light/20 transition-all transform hover:-translate-y-1 text-xl flex items-center justify-center gap-2">
+                Iniciar Diagnóstico Agora
+                <iconify-icon icon="solar:arrow-right-linear" class="text-2xl"></iconify-icon>
+              </button>
+            </div>
+            <p className="text-xs text-stone-500 uppercase tracking-widest font-bold mt-4 flex items-center justify-center gap-1">
+              <iconify-icon icon="solar:lock-linear" class="text-sm"></iconify-icon> 100% Sigiloso e Seguro
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Modal Wrapper para o Quiz Ativo */}
@@ -587,8 +648,10 @@ function App() {
         </div>
       </section>
 
+      <DiagnosticQuiz />
+
       {/* Founder Section */}
-      <section id="sobre" className="py-20 px-6 md:px-12 bg-aline-dark text-aline-bg rounded-t-[3rem]">
+      <section id="sobre" className="py-20 px-6 md:px-12 bg-aline-dark text-aline-bg">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
                 <div className="absolute inset-0 bg-aline-light rounded-2xl rotate-3 opacity-30"></div>
@@ -619,8 +682,6 @@ function App() {
             </div>
         </div>
       </section>
-
-      <DiagnosticQuiz />
 
       {/* FAQ Section */}
       <section className="py-20 px-6 md:px-12 bg-aline-bg">
