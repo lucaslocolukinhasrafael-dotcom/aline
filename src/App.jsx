@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import logoUrl from './assets/logo.svg';
-import heroImgUrl from './assets/aline-hero.jpeg';
-import sobreImgUrl from './assets/aline-sobre.jpeg';
+import heroImgUrl from './assets/aline-hero.webp';
+import sobreImgUrl from './assets/aline-sobre.webp';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -296,6 +296,9 @@ function App() {
               <img 
                 src={heroImgUrl} 
                 alt="Dra. Aline Rodrigues" 
+                width="600"
+                height="800"
+                fetchpriority="high"
                 className="w-full h-full object-cover object-[center_top] absolute inset-0 grayscale-[10%] sepia-[5%]"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-aline-dark/20 to-transparent"></div>
@@ -592,13 +595,16 @@ function App() {
                 <img 
                   src={sobreImgUrl} 
                   alt="Aline Rodrigues" 
+                  width="600"
+                  height="800"
+                  loading="lazy"
                   className="relative rounded-2xl shadow-2xl hover:grayscale-0 transition-all duration-700 w-full object-cover h-[500px] md:h-[600px] grayscale-[30%]" 
                 />
             </div>
             
             <div className="space-y-8">
                 <span className="text-aline-light uppercase tracking-widest text-sm font-semibold font-body">Sua Advogada</span>
-                <h3 className="text-5xl md:text-6xl font-title leading-tight font-bold">Conheça Aline Rodrigues</h3>
+                <h2 className="text-5xl md:text-6xl font-title leading-tight font-bold">Conheça Aline Rodrigues</h2>
                 <p className="text-lg md:text-xl text-stone-300 font-light leading-relaxed">
                     Com a experiência de mais de 100 casos atendidos, Aline percebeu que as pessoas não buscam apenas um processo judicial, mas sim recuperar a tranquilidade e a segurança sobre o seu patrimônio.
                 </p>
@@ -619,7 +625,7 @@ function App() {
       {/* FAQ Section */}
       <section className="py-20 px-6 md:px-12 bg-aline-bg">
         <div className="max-w-4xl mx-auto">
-            <h3 className="text-4xl font-title text-aline-dark font-bold text-center mb-12">Perguntas Frequentes</h3>
+            <h2 className="text-4xl font-title text-aline-dark font-bold text-center mb-12">Perguntas Frequentes</h2>
             <div className="space-y-4">
                 <FAQItem 
                   question="Por que eu preciso de um advogado para fechar um contrato de imóvel?"
@@ -650,28 +656,28 @@ function App() {
                     <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-20 md:h-24 w-auto drop-shadow-sm" />
                   </div>
                 </div>
-                <p className="text-stone-400 text-sm leading-relaxed">
+                <p className="text-stone-300 text-sm leading-relaxed">
                     Aline Rodrigues Advocacia e Consultoria.<br/>Proteção patrimonial com segurança jurídica e credibilidade.
                 </p>
                 <div className="flex space-x-4">
-                    <a href="https://instagram.com/dra.daobra" target="_blank" rel="noreferrer" className="w-10 h-10 border border-stone-700 rounded-full flex items-center justify-center hover:bg-aline-light hover:text-white transition-colors">
-                        <iconify-icon icon="mdi:instagram" class="text-lg"></iconify-icon>
+                    <a href="https://instagram.com/dra.daobra" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-12 h-12 border border-stone-700 rounded-full flex items-center justify-center hover:bg-aline-light hover:text-white transition-colors">
+                        <iconify-icon icon="mdi:instagram" class="text-xl"></iconify-icon>
                     </a>
                 </div>
             </div>
             
             <div className="col-span-1">
-                <h5 className="font-title text-xl mb-6 text-aline-light font-bold">Links Rápidos</h5>
-                <ul className="space-y-3 text-sm text-stone-400">
-                    <li><a href="#sobre" className="hover:text-white transition-colors">A Advogada</a></li>
-                    <li><a href="#solucoes" className="hover:text-white transition-colors">Soluções Jurídicas</a></li>
-                    <li><a href={whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Diagnóstico Gratuito</a></li>
+                <h3 className="font-title text-xl mb-6 text-aline-light font-bold">Links Rápidos</h3>
+                <ul className="space-y-1 text-sm text-stone-300">
+                    <li><a href="#sobre" className="hover:text-white transition-colors block py-3">A Advogada</a></li>
+                    <li><a href="#solucoes" className="hover:text-white transition-colors block py-3">Soluções Jurídicas</a></li>
+                    <li><a href={whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-white transition-colors block py-3">Diagnóstico Gratuito</a></li>
                 </ul>
             </div>
 
             <div className="col-span-1 md:col-span-2">
-                <h5 className="font-title text-xl mb-6 text-aline-light font-bold">Contato & Localização</h5>
-                <ul className="space-y-3 text-sm text-stone-400 mb-6">
+                <h3 className="font-title text-xl mb-6 text-aline-light font-bold">Contato & Localização</h3>
+                <ul className="space-y-3 text-sm text-stone-300 mb-6">
                     <li className="flex items-center"><iconify-icon icon="solar:phone-linear" class="mr-2 text-lg"></iconify-icon> (21) 96650-9969</li>
                     <li className="flex items-center"><iconify-icon icon="solar:letter-linear" class="mr-2 text-lg"></iconify-icon> aline.elem.adv@gmail.com</li>
                     <li className="flex items-start"><iconify-icon icon="solar:map-point-linear" class="mr-2 mt-1 text-lg"></iconify-icon> 
