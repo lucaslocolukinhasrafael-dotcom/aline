@@ -185,9 +185,9 @@ Possui documentos: ${formData.document}`;
           {step === 3 && (
             <div className="space-y-6 animate-fade-in">
               <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 3 de 5</span>
-              <h3 className="text-3xl font-title text-aline-dark">Se você não resolver isso logo, qual é o pior cenário para a sua vida e da sua família?</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                {['Perder o imóvel e o dinheiro investido', 'Pagar uma dívida infinita e abusiva', 'Ficar com nome sujo e bens bloqueados', 'Comprar um problema e não um lar'].map((concern) => (
+              <h3 className="text-3xl font-title text-aline-dark">Como essa situação de incerteza está impactando a sua vida hoje?</h3>
+              <div className="flex flex-col gap-4 mt-6">
+                {['Medo constante de perder o dinheiro que investi', 'Sensação de estar sendo enganado ou passado para trás', 'Estou travado: não consigo vender ou aproveitar o que é meu', 'Insegurança total: não sei nem por onde começar a resolver'].map((concern) => (
                   <button key={concern} onClick={() => handleNext('concern', concern)} className="p-4 text-left border-2 border-stone-200 rounded-xl hover:border-aline-dark hover:bg-aline-bgDark transition-all text-stone-700 font-medium">
                     {concern}
                   </button>
