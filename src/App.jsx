@@ -652,8 +652,8 @@ function App() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-stone-700/50 pb-16">
             <div className="md:col-span-1 space-y-6">
                 <div className="flex items-center gap-2">
-                  <div className="bg-aline-bg/95 p-6 rounded-2xl shadow-xl inline-block">
-                    <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-20 md:h-24 w-auto drop-shadow-sm" />
+                  <div className="inline-block">
+                    <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-20 md:h-24 w-auto drop-shadow-sm brightness-0 invert opacity-90" />
                   </div>
                 </div>
                 <p className="text-stone-300 text-sm leading-relaxed">
