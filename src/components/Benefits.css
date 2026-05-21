@@ -1,0 +1,42 @@
+.benefits-section {
+  background-color: var(--color-white);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.benefit-card {
+  padding: var(--spacing-md);
+  background-color: var(--color-bg);
+  border-radius: var(--border-radius-lg);
+  transition: var(--transition-normal);
+  border: 1px solid transparent;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(189, 159, 87, 0.2);
+}
+
+.benefit-icon {
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.benefit-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  font-family: var(--font-body); /* For benefits, body font for titles looks cleaner, but let's keep the global rule unless overridden */
+  font-weight: 700;
+}
+
+.benefit-card p {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
