@@ -199,9 +199,9 @@ Possui documentos: ${formData.document}`;
           {step === 4 && (
             <div className="space-y-6 animate-fade-in">
               <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 4 de 5</span>
-              <h3 className="text-3xl font-title text-aline-dark">O mercado imobiliário destrói amadores. Você já tentou resolver isso sozinho ou com profissionais genéricos?</h3>
+              <h3 className="text-3xl font-title text-aline-dark">Para entendermos o seu momento: você já buscou alguma orientação profissional sobre este caso?</h3>
               <div className="flex flex-col gap-4 mt-6">
-                {['Sim, e o problema só piorou', 'Não, sei que preciso da melhor proteção desde o início'].map((doc) => (
+                {['Sim, mas ainda não sinto total segurança na estratégia', 'Ainda não, estou buscando a orientação correta agora'].map((doc) => (
                   <button key={doc} onClick={() => handleNext('document', doc)} className="p-4 text-left border-2 border-stone-200 rounded-xl hover:border-aline-dark hover:bg-aline-bgDark transition-all text-stone-700 font-medium">
                     {doc}
                   </button>
@@ -246,23 +246,23 @@ Possui documentos: ${formData.document}`;
 
           {step === 7 && (
             <div className="text-center space-y-6 animate-fade-in">
-              <div className="w-20 h-20 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner animate-pulse">
-                <iconify-icon icon="solar:danger-triangle-bold-duotone" class="text-5xl"></iconify-icon>
+              <div className="w-20 h-20 bg-aline-light/20 text-aline-dark rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                <iconify-icon icon="solar:shield-check-bold-duotone" class="text-5xl"></iconify-icon>
               </div>
-              <h3 className="text-4xl font-title font-bold text-aline-dark">🚨 ALERTA VERMELHO: Mas Há Uma Saída Estratégica.</h3>
+              <h3 className="text-4xl font-title font-bold text-aline-dark">Análise Concluída: É Possível Proteger Seu Patrimônio.</h3>
               <p className="text-lg text-stone-600 font-body">
-                Nossa análise indicou que o risco de <strong className="text-aline-dark">{formData.concern.toLowerCase()}</strong> é gravíssimo. 
+                Compreendemos a sua preocupação. Nossa análise indica que a situação de <strong className="text-aline-dark">{formData.theme.toLowerCase()}</strong> exige atenção, mas existem caminhos jurídicos sólidos para resguardar os seus direitos. 
               </p>
-              <div className="p-6 bg-stone-50 border-l-4 border-red-500 rounded-r-xl mt-6 mb-6 text-left shadow-sm">
+              <div className="p-6 bg-stone-50 border border-stone-200 rounded-xl mt-6 mb-6 text-left shadow-sm">
                 <p className="text-sm text-stone-800 leading-relaxed font-medium mb-3">
-                  Bancos, construtoras e golpistas usam o seu desconhecimento contra você. A cada dia que passa sem uma blindagem jurídica perante este risco de <strong className="text-aline-dark">{formData.theme.toLowerCase()}</strong>, você está essencialmente entregando o seu patrimônio para eles.
+                  No direito imobiliário, o tempo é um fator decisivo. Adiar a resolução costuma limitar as opções de defesa e agravar o cenário. É fundamental agir com estratégia.
                 </p>
                 <p className="text-sm text-stone-800 leading-relaxed font-bold">
-                  A boa notícia: A Dra. Aline possui o mapa exato para neutralizar esse risco. Ela já resgatou a segurança de clientes em cenários idênticos ao seu, utilizando teses jurídicas avançadas que profissionais genéricos desconhecem.
+                  A Dra. Aline já estruturou a proteção de diversos clientes em situações semelhantes à sua, aplicando teses jurídicas precisas para trazer segurança e previsibilidade.
                 </p>
               </div>
-              <p className="text-md text-stone-600 font-body mb-2 italic">O diagnóstico está claro. A solução existe. O próximo passo só depende de você.</p>
-              <a href={generateWhatsAppUrl()} target="_blank" rel="noreferrer" className="inline-block mt-4 w-full px-10 py-5 bg-[#25D366] text-white font-bold rounded-xl shadow-xl hover:bg-[#1ebd5a] transition-all duration-300 flex items-center justify-center gap-3 text-lg hover:-translate-y-1">
+              <p className="text-md text-stone-600 font-body mb-2">O próximo passo é realizar um alinhamento direto para traçar o seu plano de ação.</p>
+              <a href={generateWhatsAppUrl()} target="_blank" rel="noreferrer" className="inline-block mt-4 w-full px-10 py-5 bg-aline-dark text-aline-bg font-bold rounded-xl shadow-xl hover:bg-aline-light transition-all duration-300 flex items-center justify-center gap-3 text-lg hover:-translate-y-1">
                 <iconify-icon icon="mdi:whatsapp" class="text-3xl"></iconify-icon>
                 Falar com a Dra. Aline Agora
               </a>
