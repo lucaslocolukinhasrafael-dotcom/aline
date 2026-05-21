@@ -646,7 +646,6 @@ function App() {
                     Quero Me Tornar Um Caso De Sucesso <iconify-icon icon="solar:arrow-right-linear" class="text-xl"></iconify-icon>
                 </a>
             </div>
-        </div>
       </section>
 
       <DiagnosticQuiz />
