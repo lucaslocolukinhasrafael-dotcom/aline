@@ -51,6 +51,8 @@ const DiagnosticQuiz = () => {
   const handleNext = (key, value) => {
     setFormData({ ...formData, [key]: value });
     setStep(step + 1);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'quiz_step_completed', step_number: step + 1, step_name: key });
   };
 
   const maskPhone = (value) => {
@@ -111,6 +113,9 @@ const DiagnosticQuiz = () => {
     } catch (error) {
       console.error("Erro ao enviar webhook:", error);
     }
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'generate_lead' });
 
     setTimeout(() => {
       setIsAnalyzing(false);
@@ -189,7 +194,7 @@ Possui documentos: ${formData.document}`;
               Responda a 4 perguntas rápidas (menos de 1 minuto) e descubra as chances reais do seu caso.
             </p>
             <div className="pt-4">
-              <button onClick={() => setStep(1)} className="w-full py-5 bg-gradient-to-r from-aline-dark to-[#8a723b] text-white font-bold rounded-xl hover:shadow-xl hover:shadow-aline-light/20 transition-all transform hover:-translate-y-1 text-xl flex items-center justify-center gap-2">
+              <button onClick={() => { setStep(1); window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'quiz_started' }); }} className="w-full py-5 bg-gradient-to-r from-aline-dark to-[#8a723b] text-white font-bold rounded-xl hover:shadow-xl hover:shadow-aline-light/20 transition-all transform hover:-translate-y-1 text-xl flex items-center justify-center gap-2">
                 Iniciar Diagnóstico Agora
                 <iconify-icon icon="solar:arrow-right-linear" class="text-2xl"></iconify-icon>
               </button>
