@@ -434,16 +434,16 @@ function App() {
 
       {/* Hero Section */}
       <section className="relative pt-10 pb-20 md:pt-16 md:pb-24 px-6 md:px-12 bg-aline-cream overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
             {/* Text Column */}
-            <div className="flex flex-col items-start text-left lg:pr-8">
+            <div className="flex flex-col items-start text-left lg:pr-8 lg:col-span-7 xl:col-span-8">
               <FadeIn delay={100}>
-                <h1 className="text-[2.4rem] md:text-[4rem] leading-[1.05] tracking-tight font-title text-aline-dark mb-4 md:mb-6 max-w-2xl">
+                <h1 className="text-[2.8rem] md:text-[5rem] lg:text-[5.5rem] xl:text-[6.2rem] leading-[0.95] tracking-tighter font-title text-aline-dark mb-4 md:mb-6 w-full">
                   Atuação estratégica para <span className="font-bold text-aline-primary">blindar seu patrimônio</span> e garantir seus direitos, <span className="font-bold">sem juridiquês.</span>
                 </h1>
               </FadeIn>
               <FadeIn delay={300}>
-                <p className="text-base md:text-xl text-stone-600 mb-8 max-w-xl font-body leading-relaxed">
+                <p className="text-base md:text-2xl text-stone-600 mb-10 max-w-2xl font-body leading-relaxed font-medium">
                   A segurança jurídica que você exige com o atendimento próximo e humano que você merece.
                 </p>
               </FadeIn>
@@ -463,8 +463,8 @@ function App() {
             </div>
 
             {/* Image Column */}
-            <div className="relative w-full h-[450px] lg:h-[700px] mt-8 lg:mt-0 flex justify-center lg:justify-end items-end pb-8 lg:pb-0">
-              <FadeIn direction="left" delay={200} className="w-full lg:w-[90%] h-full">
+            <div className="relative w-full h-[450px] lg:h-[700px] xl:h-[800px] mt-8 lg:mt-0 flex justify-center lg:justify-end items-end pb-8 lg:pb-0 lg:col-span-5 xl:col-span-4">
+              <FadeIn direction="left" delay={200} className="w-full lg:w-[110%] h-full">
                 <div className="relative w-full h-full rounded-tl-[6rem] rounded-br-[6rem] lg:rounded-tl-[8rem] lg:rounded-br-[8rem] overflow-hidden shadow-2xl ml-auto">
                   <img 
                     src={heroImgUrl} 
