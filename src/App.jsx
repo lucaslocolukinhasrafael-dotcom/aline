@@ -3,7 +3,7 @@ import logoUrl from './assets/logo.svg';
 import heroImgUrl from './assets/aline-hero2.jpeg';
 import sobreImgUrl from './assets/aline-sobre.webp';
 
-const FadeIn = ({ children, delay = 0, direction = 'up' }) => {
+const FadeIn = ({ children, delay = 0, direction = 'up', className = '' }) => {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef();
 
@@ -36,7 +36,7 @@ const FadeIn = ({ children, delay = 0, direction = 'up' }) => {
       ref={domRef}
       className={`transition-all duration-1000 ease-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
-      } ${getTranslate()}`}
+      } ${getTranslate()} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
@@ -427,12 +427,12 @@ function App() {
   return (
     <>
       {/* Navigation */}
-      <nav className="flex sticky top-0 z-50 w-full px-6 md:px-8 py-4 justify-between items-center bg-aline-cream border-b border-stone-200 shadow-sm transition-all duration-300 relative">
+      <nav className="flex sticky top-0 z-50 w-full px-6 md:px-8 py-4 justify-between items-center bg-aline-dark border-b border-aline-dark shadow-sm transition-all duration-300 relative">
         <div className="flex items-center gap-3">
-          <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-10 md:h-12 w-auto opacity-90" />
+          <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-10 md:h-12 w-auto brightness-0 invert opacity-90" />
         </div>
 
-        <div className="hidden md:flex items-center space-x-10 text-sm font-bold tracking-wide text-aline-primary absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="hidden md:flex items-center space-x-10 text-sm font-bold tracking-wide text-white absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <a href="#solucoes" className="hover:text-aline-secondary transition-colors">Serviços</a>
           <a href="#sobre" className="hover:text-aline-secondary transition-colors">Visão</a>
           <a href="#sobre" className="hover:text-aline-secondary transition-colors">A Advogada</a>
@@ -440,7 +440,7 @@ function App() {
         </div>
 
         <div className="flex items-center">
-          <a href="#diagnostico" className="px-5 md:px-6 py-2.5 bg-white border border-stone-300 text-aline-primary font-bold rounded-full hover:bg-stone-50 transition-colors duration-300 shadow-sm flex items-center gap-2 text-xs md:text-sm">
+          <a href="#diagnostico" className="px-5 md:px-6 py-2.5 bg-aline-secondary border border-aline-secondary text-aline-dark font-bold rounded-full hover:bg-aline-light hover:border-aline-light transition-colors duration-300 shadow-sm flex items-center gap-2 text-xs md:text-sm">
             Diagnóstico
             <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
           </a>
@@ -448,23 +448,23 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-16 pb-24 px-6 md:px-12 bg-aline-cream overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+      <section className="relative pt-10 pb-20 md:pt-16 md:pb-24 px-6 md:px-12 bg-aline-cream overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
             {/* Text Column */}
             <div className="flex flex-col items-start text-left lg:pr-8">
               <FadeIn delay={100}>
-                <h1 className="text-5xl md:text-6xl font-title text-aline-dark leading-[1.1] mb-6">
+                <h1 className="text-[2.2rem] md:text-[3.5rem] leading-[1.1] font-title text-aline-dark mb-4 md:mb-6 max-w-lg">
                   Advocacia full service com atendimento próximo e estratégico.
                 </h1>
               </FadeIn>
               <FadeIn delay={300}>
-                <p className="text-lg text-stone-600 mb-10 max-w-lg font-body leading-relaxed">
+                <p className="text-base md:text-lg text-stone-600 mb-8 max-w-lg font-body leading-relaxed">
                   Adaptado às necessidades de quem busca segurança jurídica em questões imobiliárias e de consumo.
                 </p>
               </FadeIn>
               
               <FadeIn delay={500}>
-                <div className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                   <a href="#diagnostico" className="w-full sm:w-auto px-8 py-4 bg-aline-secondary text-aline-dark rounded-full font-bold text-sm hover:shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2">
                     Fazer Diagnóstico
                     <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
@@ -478,9 +478,9 @@ function App() {
             </div>
 
             {/* Image Column */}
-            <div className="relative w-full h-[550px] lg:h-[700px] mt-12 lg:mt-0 flex justify-end">
-              <FadeIn direction="left" delay={200}>
-                <div className="relative w-full lg:w-[90%] h-full rounded-tl-[8rem] rounded-br-[8rem] overflow-hidden shadow-2xl">
+            <div className="relative w-full h-[450px] lg:h-[700px] mt-8 lg:mt-0 flex justify-center lg:justify-end items-end pb-8 lg:pb-0">
+              <FadeIn direction="left" delay={200} className="w-full lg:w-[90%] h-full">
+                <div className="relative w-full h-full rounded-tl-[6rem] rounded-br-[6rem] lg:rounded-tl-[8rem] lg:rounded-br-[8rem] overflow-hidden shadow-2xl ml-auto">
                   <img 
                     src={heroImgUrl} 
                     alt="Dra. Aline Rodrigues" 
@@ -492,13 +492,15 @@ function App() {
               </FadeIn>
               
               {/* Glassmorphism Card */}
-              <FadeIn delay={700} direction="up">
-                <div className="absolute bottom-10 left-0 lg:bottom-16 lg:-left-12 bg-white/95 backdrop-blur-md border border-white p-6 rounded-2xl shadow-2xl z-30 w-72">
-                  <span className="text-sm font-bold text-aline-dark mb-1 block">Atendimento focado em</span>
-                  <span className="text-3xl font-title text-aline-primary font-bold">Resultados</span>
-                  <p className="text-xs text-stone-700 mt-2 font-medium">Mais de 100 casos atendidos com estratégia e proteção do seu patrimônio.</p>
-                </div>
-              </FadeIn>
+              <div className="absolute -bottom-4 left-2 lg:bottom-16 lg:-left-12 z-30">
+                <FadeIn delay={700} direction="up">
+                  <div className="bg-white/95 backdrop-blur-md border border-white p-5 md:p-6 rounded-2xl shadow-2xl w-60 md:w-72">
+                    <span className="text-xs md:text-sm font-bold text-aline-dark mb-1 block">Atendimento focado em</span>
+                    <span className="text-2xl md:text-3xl font-title text-aline-primary font-bold">Resultados</span>
+                    <p className="text-[11px] md:text-xs text-stone-700 mt-2 font-medium leading-relaxed">Mais de 100 casos atendidos com estratégia e proteção do seu patrimônio.</p>
+                  </div>
+                </FadeIn>
+              </div>
             </div>
         </div>
       </section>
@@ -638,15 +640,16 @@ function App() {
         </div>
       </section>
 
-      {/* 3. Services Section (Bento Grid Layout) */}
+      {/* 3. Services Section (Bento Grid + Detalhamento) */}
       <section id="solucoes" className="bg-aline-bg py-24 px-6 md:px-12 border-t border-stone-200">
         <div className="max-w-6xl mx-auto">
+            {/* Bento Grid */}
             <FadeIn>
               <div className="text-center mb-16">
                   <h3 className="text-4xl md:text-5xl font-title text-aline-dark leading-tight max-w-3xl mx-auto font-bold mb-4">
                       Áreas de Atuação
                   </h3>
-                  <p className="text-stone-600 text-lg">Soluções seguras e estratégicas para proteger o seu patrimônio.</p>
+                  <p className="text-stone-600 text-lg max-w-2xl mx-auto">Soluções seguras e estratégicas para proteger o seu patrimônio com foco em resultados.</p>
               </div>
             </FadeIn>
             
@@ -708,6 +711,88 @@ function App() {
                   </div>
                 </FadeIn>
             </div>
+
+            {/* Detalhamento dos Serviços (Lists) */}
+            <div className="mt-24 space-y-12">
+               
+               {/* Imobiliário Detail */}
+               <FadeIn delay={100} direction="up">
+                 <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-stone-100">
+                    <div className="flex flex-col md:flex-row gap-8 lg:gap-16">
+                      <div className="md:w-1/3">
+                        <iconify-icon icon="solar:home-bold" class="text-5xl text-aline-primary mb-4"></iconify-icon>
+                        <h4 className="text-2xl md:text-3xl font-bold text-aline-dark font-title">Direito Imobiliário</h4>
+                      </div>
+                      <div className="md:w-2/3">
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                          <li className="flex items-start gap-3">
+                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
+                              <p className="text-stone-600 text-sm font-medium">Consultoria e análise de contratos de compra e venda.</p>
+                          </li>
+                          <li className="flex items-start gap-3">
+                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
+                              <p className="text-stone-600 text-sm font-medium">Regularização de imóveis (judicial e extrajudicial).</p>
+                          </li>
+                          <li className="flex items-start gap-3">
+                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
+                              <p className="text-stone-600 text-sm font-medium">Usucapião para garantir a propriedade definitiva.</p>
+                          </li>
+                          <li className="flex items-start gap-3">
+                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
+                              <p className="text-stone-600 text-sm font-medium">Defesa estratégica contra execuções e leilões.</p>
+                          </li>
+                          <li className="flex items-start gap-3">
+                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
+                              <p className="text-stone-600 text-sm font-medium">Resolução de problemas de locação e despejo.</p>
+                          </li>
+                          <li className="flex items-start gap-3">
+                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
+                              <p className="text-stone-600 text-sm font-medium">Assessoria jurídica para investidores imobiliários.</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                 </div>
+               </FadeIn>
+
+               {/* Consumidor Detail */}
+               <FadeIn delay={200} direction="up">
+                 <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-stone-100">
+                    <div className="flex flex-col md:flex-row gap-8 lg:gap-16">
+                      <div className="md:w-1/3">
+                        <iconify-icon icon="solar:cart-large-bold" class="text-5xl text-aline-primary mb-4"></iconify-icon>
+                        <h4 className="text-2xl md:text-3xl font-bold text-aline-dark font-title">Direito do Consumidor</h4>
+                      </div>
+                      <div className="md:w-2/3">
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                          <li className="flex items-start gap-3">
+                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
+                              <p className="text-stone-600 text-sm font-medium">Ações contra atraso na entrega de imóveis na planta.</p>
+                          </li>
+                          <li className="flex items-start gap-3">
+                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
+                              <p className="text-stone-600 text-sm font-medium">Distrato imobiliário (cancelamento de compra).</p>
+                          </li>
+                          <li className="flex items-start gap-3">
+                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
+                              <p className="text-stone-600 text-sm font-medium">Revisão de contratos com cláusulas e juros abusivos.</p>
+                          </li>
+                          <li className="flex items-start gap-3">
+                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
+                              <p className="text-stone-600 text-sm font-medium">Cobranças indevidas de condomínio ou banco.</p>
+                          </li>
+                          <li className="flex items-start gap-3">
+                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
+                              <p className="text-stone-600 text-sm font-medium">Indenizações por danos materiais e morais.</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                 </div>
+               </FadeIn>
+
+            </div>
+
         </div>
       </section>
 
