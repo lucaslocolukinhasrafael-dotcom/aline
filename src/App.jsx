@@ -132,6 +132,8 @@ const DiagnosticQuiz = () => {
     }
   };
 
+  const currentPath = formData.area ? (quizPaths[formData.area] || quizPaths['Outros']) : null;
+
   const handleNext = (key, value) => {
     setFormData({ ...formData, [key]: value });
     setStep(step + 1);
