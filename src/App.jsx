@@ -85,9 +85,52 @@ const googleReviews = [
 
 const DiagnosticQuiz = () => {
   const [step, setStep] = useState(0);
-  const [formData, setFormData] = useState({ theme: '', time: '', concern: '', document: '', name: '', phone: '' });
+  const [formData, setFormData] = useState({ area: '', theme: '', time: '', concern: '', document: '', name: '', phone: '' });
   const [formErrors, setFormErrors] = useState({ name: '', phone: '' });
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+
+  const quizPaths = {
+    'Direito Imobiliário': {
+      q2Title: 'Qual problema com o imóvel está tirando seu sono?',
+      q2Options: ['Imóvel Irregular (Insegurança da posse)', 'Construtora cobrando juros/taxas abusivas', 'Ameaça de Leilão ou Perda do Imóvel', 'Medo de cair em golpe ao comprar imóvel', 'Outro risco urgente'],
+      q3Title: 'A Justiça não perdoa quem dorme no ponto. Há quanto tempo você corre esse risco?',
+      q3Options: ['Menos de 3 meses', 'O tempo está passando (3 a 12 meses)', 'Há anos (Risco Máximo)'],
+      q4Title: 'Como essa situação de incerteza está impactando a sua vida hoje?',
+      q4Options: ['Medo constante de perder o dinheiro que investi', 'Sensação de estar sendo enganado ou passado para trás', 'Estou travado: não consigo vender ou aproveitar o que é meu', 'Insegurança total: não sei nem por onde começar a resolver'],
+      q5Title: 'Para entendermos o seu momento: você já buscou alguma orientação profissional sobre este caso?',
+      q5Options: ['Sim, mas ainda não sinto total segurança na estratégia', 'Ainda não, estou buscando a orientação correta agora']
+    },
+    'Direito de Família e Sucessões': {
+      q2Title: 'Qual situação você precisa resolver com urgência?',
+      q2Options: ['Divórcio / Partilha de Bens', 'Pensão Alimentícia (Fixar ou Revisar)', 'Guarda e Convivência dos filhos', 'Inventário / Herança'],
+      q3Title: 'Como está o diálogo com a outra parte hoje?',
+      q3Options: ['100% amigável (Queremos resolver rápido)', 'Tem conflito, mas ainda conversamos', 'Comunicação totalmente cortada / Inviável'],
+      q4Title: 'Como essa situação está impactando o seu dia a dia?',
+      q4Options: ['Desgaste emocional intenso e brigas constantes', 'Insegurança financeira para o futuro', 'Preocupação excessiva com o bem-estar dos filhos', 'Sensação de que a outra parte está levando vantagem'],
+      q5Title: 'Você já tentou resolver isso formalmente?',
+      q5Options: ['Sim, já tenho processo ou busquei outro advogado', 'Não, estou buscando a orientação correta agora']
+    },
+    'Direito do Consumidor': {
+      q2Title: 'Qual empresa causou esse transtorno enorme na sua vida?',
+      q2Options: ['Companhia Aérea (Atrasos, Cancelamentos, Bagagem)', 'Plano de Saúde (Negativa de cirurgia, exames, reajustes)', 'Bancos (Golpes, Fraudes, Juros Abusivos)', 'Lojas ou Outros Serviços (Produtos com defeito)'],
+      q3Title: 'Você já tentou resolver amigavelmente?',
+      q3Options: ['Sim, abri reclamação (Procon, SAC, Consumidor.gov)', 'Ainda não tentei', 'Tentei falar com eles, mas sou ignorado/enrolado'],
+      q4Title: 'Houve prejuízo financeiro ou apenas transtorno emocional?',
+      q4Options: ['Tive grande prejuízo financeiro direto', 'Não perdi dinheiro, mas o desgaste emocional foi extremo', 'Ambos: Perdi dinheiro e a minha paz'],
+      q5Title: 'Você possui provas do que aconteceu (Protocolos, prints, emails)?',
+      q5Options: ['Sim, tenho tudo documentado', 'Tenho algumas provas espalhadas', 'Não, não tenho provas claras']
+    },
+    'Outros': {
+      q2Title: 'Qual é o seu objetivo principal hoje?',
+      q2Options: ['Proteger meus direitos', 'Resolver um conflito urgente', 'Evitar prejuízos financeiros', 'Apenas me informar sobre o meu caso'],
+      q3Title: 'Há quanto tempo essa situação está pendente?',
+      q3Options: ['Começou recentemente', 'Há alguns meses', 'Há anos'],
+      q4Title: 'Como isso está afetando você?',
+      q4Options: ['Muito desgaste emocional', 'Insegurança financeira', 'Perda de tempo', 'Preocupação geral'],
+      q5Title: 'Você já buscou ajuda jurídica?',
+      q5Options: ['Sim, mas preciso de uma segunda opinião', 'Ainda não busquei apoio profissional']
+    }
+  };
 
   const handleNext = (key, value) => {
     setFormData({ ...formData, [key]: value });
@@ -144,7 +187,7 @@ const DiagnosticQuiz = () => {
         body: JSON.stringify({
           nome: formData.name,
           whatsapp: formData.phone,
-          tema: formData.theme,
+          tema: `[${formData.area}] ${formData.theme}`,
           tempo: formData.time,
           dor: formData.concern,
           documento: formData.document,
@@ -165,11 +208,11 @@ const DiagnosticQuiz = () => {
   };
 
   const generateWhatsAppUrl = () => {
-    const text = `Olá Dra. Aline! Meu nome é ${formData.name}. Gostaria de um diagnóstico jurídico.
-Tema: ${formData.theme}
-Tempo: ${formData.time}
-Preocupação principal: ${formData.concern}
-Possui documentos: ${formData.document}`;
+    const text = `Olá Dra. Aline! Meu nome é ${formData.name}. Gostaria de agendar uma consulta sobre *${formData.area}*.
+Tema/Problema: ${formData.theme}
+Tempo/Status: ${formData.time}
+Impacto: ${formData.concern}
+Histórico: ${formData.document}`;
     return `https://wa.me/5521966509969?text=${encodeURIComponent(text)}`;
   };
 
@@ -244,9 +287,23 @@ Possui documentos: ${formData.document}`;
           {step === 1 && (
             <div className="space-y-6 animate-fade-in">
               <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 1 de 5</span>
-              <h3 className="text-3xl font-title text-aline-dark">Qual destas ameaças ao seu patrimônio está tirando o seu sono hoje?</h3>
+              <h3 className="text-3xl font-title text-aline-dark">Qual é a principal área do seu problema hoje?</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                {['Imóvel Irregular (Insegurança da posse)', 'Construtora cobrando juros/taxas abusivas', 'Ameaça de Leilão ou Perda do Imóvel', 'Medo de cair em golpe ao comprar imóvel', 'Outro risco urgente'].map((theme) => (
+                {['Direito Imobiliário', 'Direito de Família e Sucessões', 'Direito do Consumidor', 'Outros'].map((area) => (
+                  <button key={area} onClick={(e) => { e.currentTarget.blur(); handleNext('area', area); }} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:border-stone-200 focus:bg-white transition-all duration-300 text-stone-700 font-semibold">
+                    {area}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {step === 2 && currentPath && (
+            <div className="space-y-6 animate-fade-in">
+              <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 2 de 5</span>
+              <h3 className="text-3xl font-title text-aline-dark">{currentPath.q2Title}</h3>
+              <div className="flex flex-col gap-4 mt-6">
+                {currentPath.q2Options.map((theme) => (
                   <button key={theme} onClick={(e) => { e.currentTarget.blur(); handleNext('theme', theme); }} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:border-stone-200 focus:bg-white transition-all duration-300 text-stone-700 font-semibold">
                     {theme}
                   </button>
@@ -255,12 +312,12 @@ Possui documentos: ${formData.document}`;
             </div>
           )}
 
-          {step === 2 && (
+          {step === 3 && currentPath && (
             <div className="space-y-6 animate-fade-in">
-              <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 2 de 5</span>
-              <h3 className="text-3xl font-title text-aline-dark">A Justiça não perdoa quem dorme no ponto. Há quanto tempo você corre esse risco?</h3>
+              <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 3 de 5</span>
+              <h3 className="text-3xl font-title text-aline-dark">{currentPath.q3Title}</h3>
               <div className="flex flex-col gap-4 mt-6">
-                {['Menos de 3 meses', 'O tempo está passando (3 a 12 meses)', 'Há anos (Risco Máximo)'].map((time) => (
+                {currentPath.q3Options.map((time) => (
                   <button key={time} onClick={(e) => { e.currentTarget.blur(); handleNext('time', time); }} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:border-stone-200 focus:bg-white transition-all duration-300 text-stone-700 font-semibold">
                     {time}
                   </button>
@@ -269,12 +326,12 @@ Possui documentos: ${formData.document}`;
             </div>
           )}
 
-          {step === 3 && (
+          {step === 4 && currentPath && (
             <div className="space-y-6 animate-fade-in">
-              <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 3 de 5</span>
-              <h3 className="text-3xl font-title text-aline-dark">Como essa situação de incerteza está impactando a sua vida hoje?</h3>
+              <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 4 de 5</span>
+              <h3 className="text-3xl font-title text-aline-dark">{currentPath.q4Title}</h3>
               <div className="flex flex-col gap-4 mt-6">
-                {['Medo constante de perder o dinheiro que investi', 'Sensação de estar sendo enganado ou passado para trás', 'Estou travado: não consigo vender ou aproveitar o que é meu', 'Insegurança total: não sei nem por onde começar a resolver'].map((concern) => (
+                {currentPath.q4Options.map((concern) => (
                   <button key={concern} onClick={(e) => { e.currentTarget.blur(); handleNext('concern', concern); }} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:border-stone-200 focus:bg-white transition-all duration-300 text-stone-700 font-semibold">
                     {concern}
                   </button>
@@ -283,12 +340,12 @@ Possui documentos: ${formData.document}`;
             </div>
           )}
 
-          {step === 4 && (
+          {step === 5 && currentPath && (
             <div className="space-y-6 animate-fade-in">
-              <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 4 de 5</span>
-              <h3 className="text-3xl font-title text-aline-dark">Para entendermos o seu momento: você já buscou alguma orientação profissional sobre este caso?</h3>
+              <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Passo 5 de 5</span>
+              <h3 className="text-3xl font-title text-aline-dark">{currentPath.q5Title}</h3>
               <div className="flex flex-col gap-4 mt-6">
-                {['Sim, mas ainda não sinto total segurança na estratégia', 'Ainda não, estou buscando a orientação correta agora'].map((doc) => (
+                {currentPath.q5Options.map((doc) => (
                   <button key={doc} onClick={(e) => { e.currentTarget.blur(); handleNext('document', doc); }} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:border-stone-200 focus:bg-white transition-all duration-300 text-stone-700 font-semibold">
                     {doc}
                   </button>
@@ -297,7 +354,7 @@ Possui documentos: ${formData.document}`;
             </div>
           )}
 
-          {step === 5 && (
+          {step === 6 && (
             <div className="space-y-6 animate-fade-in">
               <span className="text-sm font-bold tracking-widest text-aline-light uppercase">Último Passo</span>
               <h3 className="text-3xl font-title text-aline-dark">Onde enviamos a análise inicial?</h3>
@@ -321,7 +378,7 @@ Possui documentos: ${formData.document}`;
             </div>
           )}
 
-          {step === 6 && (
+          {step === 7 && (
             <div className="text-center py-12 space-y-6">
               {isAnalyzing ? (
                 <div className="flex flex-col items-center justify-center space-y-4">
@@ -333,18 +390,18 @@ Possui documentos: ${formData.document}`;
             </div>
           )}
 
-          {step === 7 && (
+          {step === 8 && (
             <div className="text-center space-y-6 animate-fade-in">
               <div className="w-20 h-20 bg-aline-light/20 text-aline-dark rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
                 <iconify-icon icon="solar:shield-check-bold-duotone" class="text-5xl"></iconify-icon>
               </div>
-              <h3 className="text-4xl font-title font-bold text-aline-dark">Análise Concluída: É Possível Proteger Seu Patrimônio.</h3>
+              <h3 className="text-4xl font-title font-bold text-aline-dark">Análise Concluída: É Possível Proteger Seus Direitos.</h3>
               <p className="text-lg text-stone-600 font-body">
-                Compreendemos a sua preocupação. Nossa análise indica que a situação de <strong className="text-aline-dark">{formData.theme.toLowerCase()}</strong> exige atenção, mas existem caminhos jurídicos sólidos para resguardar os seus direitos. 
+                Compreendemos a sua preocupação. Nossa análise indica que a situação de <strong className="text-aline-dark">{formData.theme.toLowerCase()}</strong> exige atenção, mas existem caminhos jurídicos sólidos para resguardar os seus direitos na área de {formData.area}. 
               </p>
               <div className="p-6 bg-stone-50 border border-stone-200 rounded-xl mt-6 mb-6 text-left shadow-sm">
                 <p className="text-sm text-stone-800 leading-relaxed font-medium mb-3">
-                  No direito imobiliário, o tempo é um fator decisivo. Adiar a resolução costuma limitar as opções de defesa e agravar o cenário. É fundamental agir com estratégia.
+                  Na Justiça, o tempo é um fator decisivo. Adiar a resolução costuma limitar as opções de defesa e agravar o cenário. É fundamental agir com estratégia.
                 </p>
                 <p className="text-sm text-stone-800 leading-relaxed font-bold">
                   A Dra. Aline já estruturou a proteção de diversos clientes em situações semelhantes à sua, aplicando teses jurídicas precisas para trazer segurança e previsibilidade.
