@@ -386,66 +386,69 @@ function App() {
   return (
     <>
       {/* Navigation */}
-      <nav className="hidden md:flex sticky top-0 z-50 w-full px-8 py-3 justify-between items-center bg-white/70 backdrop-blur-md border-b border-white/50 shadow-sm transition-all duration-300 relative">
+      <nav className="hidden md:flex sticky top-0 z-50 w-full px-8 py-3 justify-between items-center bg-aline-primary shadow-md transition-all duration-300 relative">
         <div className="flex items-center gap-3">
-          <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-12 md:h-16 w-auto drop-shadow-sm" />
+          <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-10 md:h-12 w-auto brightness-0 invert opacity-90" />
         </div>
 
-        <div className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-stone-600 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <a href="#solucoes" className="hover:text-aline-dark transition-colors">Soluções</a>
-          <a href="#sobre" className="hover:text-aline-dark transition-colors">A Advogada</a>
-          <a href="#depoimentos" className="hover:text-aline-dark transition-colors">Resultados</a>
+        <div className="hidden md:flex items-center space-x-10 text-sm font-medium tracking-wide text-white/90 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <a href="#solucoes" className="hover:text-white transition-colors">Serviços</a>
+          <a href="#sobre" className="hover:text-white transition-colors">Visão</a>
+          <a href="#sobre" className="hover:text-white transition-colors">Sobre a Advogada</a>
+          <a href="#depoimentos" className="hover:text-white transition-colors">Localização</a>
         </div>
 
         <div className="hidden md:flex items-center">
-          <a href={whatsappUrl} target="_blank" rel="noreferrer" className="px-6 py-3 bg-aline-dark text-aline-bg font-bold rounded-full hover:bg-aline-light transition-colors duration-300 shadow-lg">
+          <a href={whatsappUrl} target="_blank" rel="noreferrer" className="px-6 py-2.5 bg-white text-aline-primary font-bold rounded-full hover:bg-stone-100 transition-colors duration-300 shadow-sm flex items-center gap-2 text-sm">
             Diagnóstico Gratuito
+            <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
           </a>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 px-6 md:px-12 overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-stone-100 via-stone-50 to-white -z-10"></div>
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-aline-light/10 rounded-full blur-3xl -z-10"></div>
-        
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 mt-10">
+      <section className="relative pt-16 pb-24 px-6 md:px-12 bg-aline-cream overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
             {/* Text Column */}
-            <div className="flex flex-col items-start text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-aline-light/10 text-aline-dark text-sm font-bold tracking-wide mb-8 border border-aline-light/20">
-                <span className="w-2 h-2 rounded-full bg-aline-dark animate-pulse"></span>
-                Atendimento Jurídico Especializado
-              </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-title font-bold text-aline-dark leading-[1.1] tracking-tight mb-6">
-                Proteja seu patrimônio com <span className="text-transparent bg-clip-text bg-gradient-to-r from-aline-dark to-aline-light">Segurança e Estratégia</span>
+            <div className="flex flex-col items-start text-left lg:pr-8">
+              <h1 className="text-5xl md:text-6xl font-title text-aline-dark leading-[1.1] mb-6">
+                Advocacia full service com atendimento próximo e estratégico.
               </h1>
-              <p className="text-lg md:text-xl text-stone-600 mb-10 max-w-2xl font-body leading-relaxed">
-                Consultoria e atuação estratégica em conflitos imobiliários, leilões, usucapião e problemas com construtoras. Evite prejuízos antes mesmo que eles aconteçam.
+              <p className="text-lg text-stone-600 mb-10 max-w-lg font-body leading-relaxed">
+                Adaptado às necessidades de quem busca segurança jurídica em questões imobiliárias e de consumo.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href={whatsappUrl} target="_blank" rel="noreferrer" className="px-8 py-4 bg-gradient-to-r from-aline-dark to-[#8a723b] text-white rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-aline-light/30 transition-all transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
-                  <iconify-icon icon="ic:baseline-whatsapp" class="text-2xl"></iconify-icon>
-                  Falar com a Dra. Aline
+              <div className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
+                <a href={whatsappUrl} target="_blank" rel="noreferrer" className="w-full sm:w-auto px-8 py-4 bg-aline-secondary text-aline-dark rounded-full font-bold text-sm hover:shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2">
+                  Entrar em contato
+                  <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
                 </a>
-                <a href="#diagnostico" className="px-8 py-4 bg-white border-2 border-stone-200 text-stone-700 rounded-xl font-bold text-lg hover:border-aline-light hover:text-aline-dark transition-all text-center flex items-center justify-center">
-                  Diagnóstico Gratuito
+                <a href={whatsappUrl} target="_blank" rel="noreferrer" className="w-full sm:w-auto px-6 py-4 text-aline-dark font-bold text-sm hover:text-aline-primary transition-colors flex items-center justify-center gap-2">
+                  <iconify-icon icon="ic:baseline-whatsapp" class="text-2xl text-green-600"></iconify-icon>
+                  Meu WhatsApp
                 </a>
               </div>
             </div>
 
             {/* Image Column */}
-            <div className="relative w-full h-[500px] lg:h-[650px] rounded-3xl opacity-95 shadow-2xl shadow-aline-light/20 overflow-hidden transform lg:translate-x-4 mt-12 lg:mt-0">
-              <img 
-                src={heroImgUrl} 
-                alt="Dra. Aline Rodrigues" 
-                width="600"
-                height="800"
-                fetchpriority="high"
-                className="w-full h-full object-cover object-[center_top] absolute inset-0 grayscale-[10%] sepia-[5%]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-aline-dark/20 to-transparent"></div>
+            <div className="relative w-full h-[550px] lg:h-[700px] mt-12 lg:mt-0 flex justify-end">
+              <div className="relative w-full lg:w-[90%] h-full rounded-tl-[8rem] rounded-br-[8rem] overflow-hidden shadow-2xl">
+                <img 
+                  src={heroImgUrl} 
+                  alt="Dra. Aline Rodrigues" 
+                  width="600"
+                  height="800"
+                  fetchpriority="high"
+                  className="w-full h-full object-cover object-[center_top]"
+                />
+              </div>
+              
+              {/* Glassmorphism Card */}
+              <div className="absolute bottom-10 -left-6 lg:left-0 bg-white/40 backdrop-blur-md border border-white/50 p-6 rounded-2xl shadow-xl z-20 w-64">
+                <span className="text-sm font-bold text-aline-dark mb-1 block">Atendimento focado em</span>
+                <span className="text-3xl font-title text-aline-primary font-bold">Resultados</span>
+                <p className="text-xs text-stone-700 mt-2 font-medium">Mais de 100 casos atendidos protegendo o seu patrimônio.</p>
+              </div>
             </div>
         </div>
       </section>
@@ -585,58 +588,70 @@ function App() {
         </div>
       </section>
 
-      {/* 3. Services Grid (The Offer) */}
-      <section id="solucoes" className="py-20 px-6 md:px-12 border-t border-stone-200 bg-gradient-to-br from-[#F8F7F3] to-[#EAE7DF]">
-        <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div>
-                    <h3 className="text-4xl md:text-5xl text-aline-dark mb-2">Atuação Estratégica</h3>
-                    <p className="text-stone-500 max-w-3xl leading-relaxed">Advocacia full service com atendimento próximo, estratégico e adaptado às necessidades de quem busca segurança jurídica em questões imobiliárias e de consumo.</p>
-                </div>
+      {/* 3. Services Section (Reference Split Layout) */}
+      <section id="solucoes" className="bg-aline-cream pt-10 pb-20">
+        <div className="flex flex-col lg:flex-row w-full max-w-[1400px] mx-auto bg-white shadow-sm border border-stone-100">
+            {/* Left Column (Brown Block) */}
+            <div className="w-full lg:w-1/3 bg-aline-primary text-white p-12 md:p-16 flex flex-col justify-center">
+                <h3 className="text-sm font-bold tracking-widest uppercase mb-10 opacity-90">Serviços</h3>
+                <ul className="space-y-6 text-lg font-medium">
+                    <li className="hover:text-aline-secondary transition-colors cursor-default">Consultoria Imobiliária</li>
+                    <li className="hover:text-aline-secondary transition-colors cursor-default">Regularização de Imóveis</li>
+                    <li className="hover:text-aline-secondary transition-colors cursor-default">Usucapião Judicial / Extra</li>
+                    <li className="hover:text-aline-secondary transition-colors cursor-default">Defesa em Leilões</li>
+                    <li className="hover:text-aline-secondary transition-colors cursor-default">Distrato Imobiliário</li>
+                    <li className="hover:text-aline-secondary transition-colors cursor-default">Revisão Contratual</li>
+                    <li className="hover:text-aline-secondary transition-colors cursor-default">Direito do Consumidor</li>
+                    <li className="hover:text-aline-secondary transition-colors cursor-default">Questões Condominiais</li>
+                </ul>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Card 1 */}
-                <div className="group bg-white/40 backdrop-blur-md border border-white/60 p-8 md:p-10 rounded-2xl hover:bg-white/60 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
-                    <div className="w-12 h-12 bg-aline-dark text-aline-bg rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                        <iconify-icon icon="solar:home-angle-linear" class="text-2xl"></iconify-icon>
+            {/* Right Column (Detailed List) */}
+            <div className="w-full lg:w-2/3 p-12 md:p-16 lg:p-24 bg-white flex flex-col justify-center">
+                <h3 className="text-3xl md:text-4xl font-title text-aline-dark mb-16 leading-tight">
+                    Compromisso e atuação em diversas áreas do Direito para melhor atendê-lo.
+                </h3>
+                
+                <div className="space-y-12">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-10 group">
+                        <span className="text-sm font-bold text-stone-300 group-hover:text-aline-primary transition-colors mt-1">01</span>
+                        <div className="flex-1">
+                            <h4 className="text-lg font-bold text-aline-dark mb-3">Direito Imobiliário e Contratos</h4>
+                            <p className="text-stone-500 text-sm leading-relaxed">
+                                Compra e venda, due diligence, revisão de contratos abusivos e assessoria para investidores garantindo total segurança na negociação.
+                            </p>
+                        </div>
                     </div>
-                    <h4 className="text-3xl font-title text-aline-dark mb-4 font-bold">Regularização e Usucapião</h4>
-                    <p className="text-stone-600 mb-8 leading-relaxed font-body text-sm">
-                        Um imóvel irregular perde até 40% do seu valor e não pode ser financiado. Atuamos com regularização registral e usucapião judicial/extrajudicial para garantir que você seja o verdadeiro dono.
-                    </p>
-                    <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-semibold uppercase tracking-wider text-aline-dark">
-                        Analisar Meu Caso <iconify-icon icon="solar:arrow-right-up-linear" class="ml-1"></iconify-icon>
-                    </a>
-                </div>
+                    
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-10 group">
+                        <span className="text-sm font-bold text-stone-300 group-hover:text-aline-primary transition-colors mt-1">02</span>
+                        <div className="flex-1">
+                            <h4 className="text-lg font-bold text-aline-dark mb-3">Regularização e Usucapião</h4>
+                            <p className="text-stone-500 text-sm leading-relaxed">
+                                Atuação judicial e extrajudicial para regularização registral e cartorária, garantindo que você seja o verdadeiro proprietário do imóvel.
+                            </p>
+                        </div>
+                    </div>
 
-                {/* Card 2 */}
-                <div className="group bg-white/40 backdrop-blur-md border border-white/60 p-8 md:p-10 rounded-2xl hover:bg-white/60 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
-                    <div className="w-12 h-12 bg-aline-dark text-aline-bg rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                        <iconify-icon icon="solar:danger-triangle-linear" class="text-2xl"></iconify-icon>
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-10 group">
+                        <span className="text-sm font-bold text-stone-300 group-hover:text-aline-primary transition-colors mt-1">03</span>
+                        <div className="flex-1">
+                            <h4 className="text-lg font-bold text-aline-dark mb-3">Leilões e Construtoras</h4>
+                            <p className="text-stone-500 text-sm leading-relaxed">
+                                Defesa contra execuções e leilões extrajudiciais, além de atuação firme contra atraso de obras e cobranças indevidas de construtoras.
+                            </p>
+                        </div>
                     </div>
-                    <h4 className="text-3xl font-title text-aline-dark mb-4 font-bold">Leilões e Construtoras</h4>
-                    <p className="text-stone-600 mb-8 leading-relaxed font-body text-sm">
-                        Defesa especializada contra leilões extrajudiciais e resolução de problemas complexos com construtoras (atraso de obra, distrato e cobranças abusivas).
-                    </p>
-                    <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-semibold uppercase tracking-wider text-aline-dark">
-                        Analisar Meu Caso <iconify-icon icon="solar:arrow-right-up-linear" class="ml-1"></iconify-icon>
-                    </a>
-                </div>
 
-                {/* Card 3 (Action Oriented) */}
-                <div className="group bg-aline-dark p-8 md:p-10 rounded-2xl hover:bg-[#3a2818] transition-colors duration-300 cursor-pointer text-white relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-aline-light opacity-10 rounded-full blur-2xl"></div>
-                    <div className="w-12 h-12 bg-aline-light text-aline-dark rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform relative z-10">
-                        <iconify-icon icon="solar:document-add-linear" class="text-2xl"></iconify-icon>
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-10 group">
+                        <span className="text-sm font-bold text-stone-300 group-hover:text-aline-primary transition-colors mt-1">04</span>
+                        <div className="flex-1">
+                            <h4 className="text-lg font-bold text-aline-dark mb-3">Direito do Consumidor</h4>
+                            <p className="text-stone-500 text-sm leading-relaxed">
+                                Defesa efetiva dos seus direitos em relações de consumo, incluindo indenizações, ações contra bancos e cobranças abusivas.
+                            </p>
+                        </div>
                     </div>
-                    <h4 className="text-3xl font-title text-white mb-4 font-bold relative z-10">Consultoria de Negócios</h4>
-                    <p className="text-stone-300 mb-8 leading-relaxed font-body text-sm relative z-10">
-                        A due diligence imobiliária garante que você não compre um problema. Analisamos contratos de compra e venda, matrículas e certidões antes de você fechar o negócio.
-                    </p>
-                    <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-semibold uppercase tracking-wider text-aline-light relative z-10">
-                        Agendar Consultoria <iconify-icon icon="solar:arrow-right-up-linear" class="ml-1"></iconify-icon>
-                    </a>
                 </div>
             </div>
         </div>

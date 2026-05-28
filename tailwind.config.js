@@ -12,6 +12,9 @@ export default {
           light: '#bd9f57',
           bg: '#F5F3EF', // Reference beige, very elegant
           bgDark: '#EBE8E0', // Slightly darker beige
+          primary: '#b26639', // Terracotta from reference
+          secondary: '#f3c77c', // Gold button from reference
+          cream: '#f9f6f0' // Light cream background from reference
         }
       },
       fontFamily: {
