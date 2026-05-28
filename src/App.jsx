@@ -494,7 +494,7 @@ function App() {
               
               {/* Glassmorphism Card */}
               <FadeIn delay={700} direction="up">
-                <div className="absolute bottom-10 -left-6 lg:left-0 bg-white/40 backdrop-blur-md border border-white/50 p-6 rounded-2xl shadow-xl z-20 w-64">
+                <div className="absolute bottom-4 left-4 lg:bottom-16 lg:-left-12 bg-white/80 backdrop-blur-md border border-white p-6 rounded-2xl shadow-2xl z-20 w-64">
                   <span className="text-sm font-bold text-aline-dark mb-1 block">Atendimento focado em</span>
                   <span className="text-3xl font-title text-aline-primary font-bold">Resultados</span>
                   <p className="text-xs text-stone-700 mt-2 font-medium">Mais de 100 casos atendidos protegendo o seu patrimônio.</p>
@@ -798,10 +798,10 @@ function App() {
       <DiagnosticQuiz />
 
       {/* Founder Section */}
-      <section id="sobre" className="py-20 px-6 md:px-12 bg-aline-dark text-aline-bg">
+      <section id="sobre" className="py-24 px-6 md:px-12 bg-aline-cream text-aline-dark">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-                <div className="absolute inset-0 bg-aline-light rounded-2xl rotate-3 opacity-30"></div>
+                <div className="absolute -bottom-6 -left-6 w-full h-full bg-aline-light rounded-2xl opacity-20"></div>
                 <img 
                   src={sobreImgUrl} 
                   alt="Aline Rodrigues" 
@@ -873,11 +873,11 @@ function App() {
                     Aline Rodrigues Advocacia e Consultoria.<br/>Proteção patrimonial com segurança jurídica e credibilidade.
                 </p>
                 <div className="flex space-x-4 pt-2">
-                    <a href="https://instagram.com/dra.alinerodrigues.adv" target="_blank" rel="noreferrer" aria-label="Instagram" className="flex items-center gap-3 group text-stone-300 hover:text-white transition-colors">
+                    <a href="https://instagram.com/dra.daobra" target="_blank" rel="noreferrer" aria-label="Instagram" className="flex items-center gap-3 group text-stone-300 hover:text-white transition-colors">
                         <div className="w-12 h-12 border border-stone-700 rounded-full flex items-center justify-center group-hover:bg-aline-light transition-colors">
                             <iconify-icon icon="mdi:instagram" class="text-xl"></iconify-icon>
                         </div>
-                        <span className="font-medium tracking-wide">@dra.alinerodrigues.adv</span>
+                        <span className="font-medium tracking-wide">@dra.daobra</span>
                     </a>
                 </div>
             </div>
@@ -916,9 +916,8 @@ function App() {
 
         </div>
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-stone-500 font-medium">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center text-sm text-stone-500 font-medium">
             <p>&copy; {new Date().getFullYear()} Aline Rodrigues Advocacia. Todos os direitos reservados. | OAB/RJ 243.682</p>
-            <p className="mt-2 md:mt-0 flex items-center gap-1">Desenvolvido com <iconify-icon icon="solar:heart-bold" class="text-aline-light text-xs"></iconify-icon> por Lucas Lima</p>
         </div>
         <div className="max-w-7xl mx-auto pt-4 text-xs text-stone-600 text-center">
             <p className="opacity-60">Este site tem propósito informativo e captação de acordo com as normas da OAB.</p>
