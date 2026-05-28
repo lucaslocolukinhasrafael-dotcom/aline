@@ -449,13 +449,13 @@ function App() {
               </FadeIn>
               
               <FadeIn delay={500}>
-                <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                  <a href="#diagnostico" className="w-full sm:w-auto px-8 py-4 bg-aline-secondary text-aline-dark rounded-full font-bold text-sm hover:shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2">
+                <div className="flex flex-row flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-4 w-full sm:w-auto">
+                  <a href="#diagnostico" className="w-auto px-5 sm:px-8 py-3.5 sm:py-4 bg-aline-secondary text-aline-dark rounded-full font-bold text-xs sm:text-sm hover:shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-1.5 sm:gap-2">
                     Fazer Diagnóstico
-                    <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+                    <iconify-icon icon="solar:arrow-right-linear" class="text-sm sm:text-lg"></iconify-icon>
                   </a>
-                  <a href={whatsappUrl} target="_blank" rel="noreferrer" className="w-full sm:w-auto px-6 py-4 text-aline-dark font-bold text-sm hover:text-aline-primary transition-colors flex items-center justify-center gap-2">
-                    <iconify-icon icon="ic:baseline-whatsapp" class="text-2xl text-green-600"></iconify-icon>
+                  <a href={whatsappUrl} target="_blank" rel="noreferrer" className="w-auto px-2 sm:px-6 py-3.5 sm:py-4 text-aline-dark font-bold text-xs sm:text-sm hover:text-aline-primary transition-colors flex items-center justify-center gap-1.5 sm:gap-2">
+                    <iconify-icon icon="ic:baseline-whatsapp" class="text-xl sm:text-2xl text-green-600"></iconify-icon>
                     Atendimento Online
                   </a>
                 </div>
