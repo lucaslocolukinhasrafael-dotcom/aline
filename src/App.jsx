@@ -174,7 +174,7 @@ Possui documentos: ${formData.document}`;
   };
 
   return (
-    <section id="diagnostico" className="py-24 px-6 md:px-12 bg-aline-dark text-white relative overflow-hidden border-t border-stone-200 shadow-xl">
+    <section id="diagnostico" className="py-24 px-6 md:px-12 bg-aline-dark text-white relative overflow-hidden shadow-2xl">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 relative">
         {/* PAS Copy Block */}
         <div className="space-y-6">
@@ -481,7 +481,7 @@ function App() {
                 <FadeIn delay={700} direction="up">
                   <div className="bg-white/95 backdrop-blur-md border border-white p-5 md:p-6 rounded-2xl shadow-2xl w-60 md:w-72">
                     <span className="text-xs md:text-sm font-bold text-aline-dark mb-1 block">Atendimento focado em</span>
-                    <span className="text-2xl md:text-3xl font-title text-aline-primary font-bold">Resultados</span>
+                    <span className="text-2xl md:text-3xl font-highlight text-aline-primary font-bold">Resultados</span>
                     <p className="text-[11px] md:text-xs text-stone-700 mt-2 font-medium leading-relaxed">Mais de 100 casos atendidos com estratégia e proteção do seu patrimônio.</p>
                   </div>
                 </FadeIn>
@@ -491,7 +491,7 @@ function App() {
       </section>
 
       {/* Marquee */}
-      <section className="border-y border-stone-300 py-4 bg-aline-cream overflow-hidden">
+      <section className="py-4 bg-aline-cream overflow-hidden">
         <div className="marquee-container w-full whitespace-nowrap overflow-hidden">
             <div className="animate-scroll inline-block">
                 <span className="text-2xl md:text-4xl font-title italic px-8 text-aline-light">•</span>
@@ -539,7 +539,7 @@ function App() {
       </section>
 
       {/* 2. Belief Reinforcement & News Section (Agitation) */}
-      <section className="py-24 px-6 md:px-12 bg-aline-cream border-t border-stone-200">
+      <section className="py-24 px-6 md:px-12 bg-aline-cream">
         <div className="max-w-7xl mx-auto">
             {/* The Belief / The Enemy */}
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
@@ -625,7 +625,7 @@ function App() {
       </section>
 
       {/* 3. Services Section (List Layout mimicking reference) */}
-      <section id="solucoes" className="bg-aline-cream py-24 px-6 md:px-12 border-t border-stone-200">
+      <section id="solucoes" className="bg-aline-cream py-24 px-6 md:px-12">
         <div className="max-w-4xl mx-auto space-y-20 md:space-y-24">
             <FadeIn>
               <div className="text-center mb-16">
@@ -795,7 +795,7 @@ function App() {
       </section>
 
       {/* GMB Reviews Section (Prova Social - CARROSSEL) */}
-      <section id="depoimentos" className="py-24 bg-aline-cream border-t border-stone-200 overflow-hidden">
+      <section id="depoimentos" className="py-24 bg-aline-cream overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
             <div className="text-center mb-12">
                 <div className="flex items-center justify-center gap-2 mb-4">

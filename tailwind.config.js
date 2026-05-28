@@ -18,8 +18,9 @@ export default {
         }
       },
       fontFamily: {
-        title: ['"Cinzel"', 'serif'],
-        body: ['"Montserrat"', 'sans-serif'],
+        title: ['"Plus Jakarta Sans"', 'sans-serif'],
+        body: ['"Plus Jakarta Sans"', 'sans-serif'],
+        highlight: ['"Cinzel"', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
