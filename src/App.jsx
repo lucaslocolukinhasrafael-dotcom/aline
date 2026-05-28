@@ -640,158 +640,109 @@ function App() {
         </div>
       </section>
 
-      {/* 3. Services Section (Bento Grid + Detalhamento) */}
-      <section id="solucoes" className="bg-aline-bg py-24 px-6 md:px-12 border-t border-stone-200">
-        <div className="max-w-6xl mx-auto">
-            {/* Bento Grid */}
+      {/* 3. Services Section (List Layout mimicking reference) */}
+      <section id="solucoes" className="bg-aline-cream py-24 px-6 md:px-12 border-t border-stone-200">
+        <div className="max-w-4xl mx-auto space-y-20 md:space-y-24">
             <FadeIn>
               <div className="text-center mb-16">
-                  <h3 className="text-4xl md:text-5xl font-title text-aline-dark leading-tight max-w-3xl mx-auto font-bold mb-4">
+                  <h3 className="text-4xl md:text-5xl font-title text-aline-dark leading-tight font-bold mb-4">
                       Áreas de Atuação
                   </h3>
                   <p className="text-stone-600 text-lg max-w-2xl mx-auto">Soluções seguras e estratégicas para proteger o seu patrimônio com foco em resultados.</p>
               </div>
             </FadeIn>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Imobiliário Card */}
-                <FadeIn delay={100}>
-                  <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all border border-stone-100 h-full flex flex-col justify-between group">
-                      <div>
-                          <div className="flex justify-between items-start mb-6">
-                              <iconify-icon icon="solar:home-bold" class="text-4xl text-aline-dark"></iconify-icon>
-                              <span className="text-stone-300 font-medium text-lg">01</span>
-                          </div>
-                          <h4 className="text-xl font-bold text-aline-dark mb-3">Direito Imobiliário</h4>
-                          <p className="text-stone-600 text-sm leading-relaxed mb-6">
-                              Suporte estratégico em compra e venda, regularização documental, usucapião, leilões, locações e distratos. Foco na segurança das negociações imobiliárias para proteger seu patrimônio.
-                          </p>
-                      </div>
-                      <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-aline-primary font-bold text-sm hover:text-aline-light transition-colors">
-                          Saber mais <iconify-icon icon="solar:arrow-right-linear" class="text-lg group-hover:translate-x-1 transition-transform"></iconify-icon>
-                      </a>
-                  </div>
-                </FadeIn>
-                
-                {/* Consumidor Card */}
-                <FadeIn delay={200}>
-                  <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all border border-stone-100 h-full flex flex-col justify-between group">
-                      <div>
-                          <div className="flex justify-between items-start mb-6">
-                              <iconify-icon icon="solar:cart-large-bold" class="text-4xl text-aline-dark"></iconify-icon>
-                              <span className="text-stone-300 font-medium text-lg">02</span>
-                          </div>
-                          <h4 className="text-xl font-bold text-aline-dark mb-3">Direito do Consumidor</h4>
-                          <p className="text-stone-600 text-sm leading-relaxed mb-6">
-                              Defesa firme contra problemas com construtoras, atraso de obra, revisão de contratos e cobranças indevidas. Atendimento ágil e focado na rápida resolução do conflito.
-                          </p>
-                      </div>
-                      <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-aline-primary font-bold text-sm hover:text-aline-light transition-colors">
-                          Saber mais <iconify-icon icon="solar:arrow-right-linear" class="text-lg group-hover:translate-x-1 transition-transform"></iconify-icon>
-                      </a>
-                  </div>
-                </FadeIn>
 
-                {/* Consultoria Card */}
-                <FadeIn delay={300}>
-                  <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all border border-stone-100 h-full flex flex-col justify-between group">
-                      <div>
-                          <div className="flex justify-between items-start mb-6">
-                              <iconify-icon icon="solar:shield-check-bold" class="text-4xl text-aline-dark"></iconify-icon>
-                              <span className="text-stone-300 font-medium text-lg">03</span>
-                          </div>
-                          <h4 className="text-xl font-bold text-aline-dark mb-3">Consultoria Preventiva</h4>
-                          <p className="text-stone-600 text-sm leading-relaxed mb-6">
-                              Análise detalhada de contratos e due diligence com linguagem clara e sem "juridiquês", antecipando problemas e reduzindo riscos antes de você assinar documentos abusivos.
-                          </p>
-                      </div>
-                      <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-aline-primary font-bold text-sm hover:text-aline-light transition-colors">
-                          Saber mais <iconify-icon icon="solar:arrow-right-linear" class="text-lg group-hover:translate-x-1 transition-transform"></iconify-icon>
-                      </a>
-                  </div>
-                </FadeIn>
-            </div>
-
-            {/* Detalhamento dos Serviços (Lists) */}
-            <div className="mt-24 space-y-12">
-               
-               {/* Imobiliário Detail */}
-               <FadeIn delay={100} direction="up">
-                 <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-stone-100">
-                    <div className="flex flex-col md:flex-row gap-8 lg:gap-16">
-                      <div className="md:w-1/3">
-                        <iconify-icon icon="solar:home-bold" class="text-5xl text-aline-primary mb-4"></iconify-icon>
-                        <h4 className="text-2xl md:text-3xl font-bold text-aline-dark font-title">Direito Imobiliário</h4>
-                      </div>
-                      <div className="md:w-2/3">
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                          <li className="flex items-start gap-3">
-                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
-                              <p className="text-stone-600 text-sm font-medium">Consultoria e análise de contratos de compra e venda.</p>
-                          </li>
-                          <li className="flex items-start gap-3">
-                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
-                              <p className="text-stone-600 text-sm font-medium">Regularização de imóveis (judicial e extrajudicial).</p>
-                          </li>
-                          <li className="flex items-start gap-3">
-                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
-                              <p className="text-stone-600 text-sm font-medium">Usucapião para garantir a propriedade definitiva.</p>
-                          </li>
-                          <li className="flex items-start gap-3">
-                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
-                              <p className="text-stone-600 text-sm font-medium">Defesa estratégica contra execuções e leilões.</p>
-                          </li>
-                          <li className="flex items-start gap-3">
-                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
-                              <p className="text-stone-600 text-sm font-medium">Resolução de problemas de locação e despejo.</p>
-                          </li>
-                          <li className="flex items-start gap-3">
-                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
-                              <p className="text-stone-600 text-sm font-medium">Assessoria jurídica para investidores imobiliários.</p>
-                          </li>
-                        </ul>
-                      </div>
+            {/* Direito Imobiliário */}
+            <FadeIn delay={100} direction="up">
+                <div>
+                    <h3 className="text-2xl md:text-3xl font-title font-bold text-aline-dark mb-8 pb-4 border-b border-stone-300">Direito Imobiliário</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">01</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Compra e venda de imóveis</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Consultoria, análise e regularização de contratos para garantir segurança jurídica na aquisição ou alienação de bens imóveis.</p>
+                        </div>
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">02</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Regularização de imóveis</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Soluções jurídicas para legalizar imóveis irregulares (judicial e extrajudicial), possibilitando registro e segurança patrimonial.</p>
+                        </div>
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">03</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Usucapião</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Processo extrajudicial ou judicial para reconhecimento da propriedade de um imóvel por meio da posse prolongada.</p>
+                        </div>
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">04</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Defesa em Leilões Extrajudiciais</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Atuação estratégica liminar para suspender execuções e evitar a perda do seu imóvel para bancos.</p>
+                        </div>
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">05</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Locação e Ações de Despejo</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Elaboração de contratos de aluguel, cobrança judicial em atraso e medidas legais para desocupação de imóveis.</p>
+                        </div>
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">06</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Assessoria para Investidores</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Acompanhamento jurídico completo em negociações imobiliárias, garantindo retorno seguro do investimento.</p>
+                        </div>
                     </div>
-                 </div>
-               </FadeIn>
+                </div>
+            </FadeIn>
 
-               {/* Consumidor Detail */}
-               <FadeIn delay={200} direction="up">
-                 <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-stone-100">
-                    <div className="flex flex-col md:flex-row gap-8 lg:gap-16">
-                      <div className="md:w-1/3">
-                        <iconify-icon icon="solar:cart-large-bold" class="text-5xl text-aline-primary mb-4"></iconify-icon>
-                        <h4 className="text-2xl md:text-3xl font-bold text-aline-dark font-title">Direito do Consumidor</h4>
-                      </div>
-                      <div className="md:w-2/3">
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                          <li className="flex items-start gap-3">
-                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
-                              <p className="text-stone-600 text-sm font-medium">Ações contra atraso na entrega de imóveis na planta.</p>
-                          </li>
-                          <li className="flex items-start gap-3">
-                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
-                              <p className="text-stone-600 text-sm font-medium">Distrato imobiliário (cancelamento de compra).</p>
-                          </li>
-                          <li className="flex items-start gap-3">
-                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
-                              <p className="text-stone-600 text-sm font-medium">Revisão de contratos com cláusulas e juros abusivos.</p>
-                          </li>
-                          <li className="flex items-start gap-3">
-                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
-                              <p className="text-stone-600 text-sm font-medium">Cobranças indevidas de condomínio ou banco.</p>
-                          </li>
-                          <li className="flex items-start gap-3">
-                              <span className="text-aline-primary mt-1 font-bold text-lg">•</span>
-                              <p className="text-stone-600 text-sm font-medium">Indenizações por danos materiais e morais.</p>
-                          </li>
-                        </ul>
-                      </div>
+            {/* Direito do Consumidor */}
+            <FadeIn delay={200} direction="up">
+                <div>
+                    <h3 className="text-2xl md:text-3xl font-title font-bold text-aline-dark mb-8 pb-4 border-b border-stone-300">Direito do Consumidor</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">01</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Atraso na entrega de obras</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Ações firmes contra construtoras por descumprimento de prazos na entrega de imóveis na planta.</p>
+                        </div>
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">02</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Distrato imobiliário</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Cancelamento seguro da compra e garantia de devolução justa dos valores pagos à construtora.</p>
+                        </div>
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">03</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Revisão de contratos e juros abusivos</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Análise de financiamentos e renegociação para eliminar cláusulas prejudiciais e cobranças indevidas de bancos.</p>
+                        </div>
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">04</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Cobranças indevidas</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Defesa de direitos contra taxas condominiais abusivas ou execuções ilegais de cobrança.</p>
+                        </div>
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">05</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Indenizações</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Reparação financeira por falhas na prestação de serviços, danos materiais e morais, e descumprimentos contratuais em geral.</p>
+                        </div>
                     </div>
-                 </div>
-               </FadeIn>
+                </div>
+            </FadeIn>
 
-            </div>
+            {/* Consultoria Preventiva */}
+            <FadeIn delay={300} direction="up">
+                <div>
+                    <h3 className="text-2xl md:text-3xl font-title font-bold text-aline-dark mb-8 pb-4 border-b border-stone-300">Consultoria e Assessoria Preventiva</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">01</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Atendimento estratégico contínuo</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Suporte e orientação jurídica para evitar conflitos, proteger direitos e tomar decisões seguras em negócios imobiliários.</p>
+                        </div>
+                        <div>
+                            <span className="text-aline-primary font-bold text-xl block mb-1">02</span>
+                            <h4 className="font-bold text-aline-dark text-lg mb-2">Due diligence imobiliária</h4>
+                            <p className="text-stone-600 text-sm leading-relaxed">Análise detalhada de matrícula, ônus reais e histórico documental para garantir que o imóvel não possui dívidas ou pendências ocultas.</p>
+                        </div>
+                    </div>
+                </div>
+            </FadeIn>
 
         </div>
       </section>
