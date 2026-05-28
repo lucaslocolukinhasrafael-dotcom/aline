@@ -656,7 +656,7 @@ function App() {
             <FadeIn delay={100} direction="up">
                 <div>
                     <h3 className="text-2xl md:text-3xl font-title font-bold text-aline-dark mb-8 pb-4 border-b border-stone-300">Direito Imobiliário</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                    <div className="grid grid-cols-1 gap-y-10 max-w-3xl">
                         <div>
                             <span className="text-aline-primary font-bold text-xl block mb-1">01</span>
                             <h4 className="font-bold text-aline-dark text-lg mb-2">Compra e venda de imóveis</h4>
@@ -695,7 +695,7 @@ function App() {
             <FadeIn delay={200} direction="up">
                 <div>
                     <h3 className="text-2xl md:text-3xl font-title font-bold text-aline-dark mb-8 pb-4 border-b border-stone-300">Direito do Consumidor</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                    <div className="grid grid-cols-1 gap-y-10 max-w-3xl">
                         <div>
                             <span className="text-aline-primary font-bold text-xl block mb-1">01</span>
                             <h4 className="font-bold text-aline-dark text-lg mb-2">Atraso na entrega de obras</h4>
@@ -729,7 +729,7 @@ function App() {
             <FadeIn delay={300} direction="up">
                 <div>
                     <h3 className="text-2xl md:text-3xl font-title font-bold text-aline-dark mb-8 pb-4 border-b border-stone-300">Consultoria e Assessoria Preventiva</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                    <div className="grid grid-cols-1 gap-y-10 max-w-3xl">
                         <div>
                             <span className="text-aline-primary font-bold text-xl block mb-1">01</span>
                             <h4 className="font-bold text-aline-dark text-lg mb-2">Atendimento estratégico contínuo</h4>
