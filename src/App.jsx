@@ -385,11 +385,6 @@ function App() {
 
   return (
     <>
-      {/* Announcement Bar */}
-      <div className="bg-aline-dark text-aline-bg text-xs font-medium py-3 text-center tracking-wide uppercase px-4">
-        <span>Atenção{userCity ? ` ${userCity}` : ''}: Vagas abertas para diagnóstico gratuito esta semana. <strong className="underline decoration-1 underline-offset-2">Agende Agora!</strong></span>
-      </div>
-
       {/* Navigation */}
       <nav className="hidden md:flex sticky top-0 z-50 w-full px-8 py-3 justify-between items-center bg-white/70 backdrop-blur-md border-b border-white/50 shadow-sm transition-all duration-300 relative">
         <div className="flex items-center gap-3">
@@ -596,7 +591,7 @@ function App() {
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                 <div>
                     <h3 className="text-4xl md:text-5xl text-aline-dark mb-2">Atuação Estratégica</h3>
-                    <p className="text-stone-500">Soluções imobiliárias voltadas para a proteção total do seu patrimônio.</p>
+                    <p className="text-stone-500 max-w-3xl leading-relaxed">Advocacia full service com atendimento próximo, estratégico e adaptado às necessidades de quem busca segurança jurídica em questões imobiliárias e de consumo.</p>
                 </div>
             </div>
 
@@ -661,8 +656,8 @@ function App() {
                         <iconify-icon icon="solar:star-bold"></iconify-icon>
                     </div>
                 </div>
-                <h3 className="text-4xl md:text-5xl font-title font-bold text-aline-dark">Avaliações Reais de Clientes</h3>
-                <p className="text-lg text-stone-600 mt-4">As 21 pessoas que confiaram e tiveram seu patrimônio protegido pela Dra. Aline.</p>
+                <h2 className="text-4xl md:text-5xl font-title text-aline-dark font-bold leading-tight">Autoridade Comprovada</h2>
+                <p className="text-lg text-stone-600 mt-4">Veja o que alguns de nossos clientes dizem sobre nós.</p>
             </div>
         </div>
 
@@ -760,14 +755,19 @@ function App() {
             </div>
             
             <div className="space-y-8">
-                <span className="text-aline-light uppercase tracking-widest text-sm font-semibold font-body">Sua Advogada</span>
-                <h2 className="text-5xl md:text-6xl font-title leading-tight font-bold">Conheça Aline Rodrigues</h2>
-                <p className="text-lg md:text-xl text-stone-300 font-light leading-relaxed">
-                    Com a experiência de mais de 100 casos atendidos, Aline percebeu que as pessoas não buscam apenas um processo judicial, mas sim recuperar a tranquilidade e a segurança sobre o seu patrimônio.
-                </p>
-                <p className="text-lg text-stone-400 font-light">
-                    O meu foco não é apenas "processar", mas orientar você de forma clara, acessível e preventiva, garantindo segurança jurídica em cada decisão. O mercado está cheio de armadilhas, e o meu trabalho é ser o seu escudo com uma advocacia sofisticada, mas com linguagem que você entende.
-                </p>
+                <span className="text-aline-light uppercase tracking-widest text-sm font-semibold font-body">Sobre a Dra. Aline</span>
+                <h2 className="text-5xl md:text-6xl font-title leading-tight font-bold">Expertise e Compromisso</h2>
+                <div className="text-lg md:text-xl text-stone-300 font-light leading-relaxed space-y-4">
+                    <p>
+                        <strong className="text-white">Visão:</strong> Ser reconhecida como referência em advocacia imobiliária e do consumidor no estado do Rio de Janeiro, por meio de uma atuação estratégica, humanizada e altamente resolutiva.
+                    </p>
+                    <p>
+                        Consolidar uma advocacia pautada na excelência técnica, no atendimento próximo e personalizado e na busca por soluções seguras e eficazes, tanto na prevenção quanto na resolução de conflitos envolvendo imóveis, contratos, financiamentos, construtoras, leilões, vícios construtivos e relações de consumo.
+                    </p>
+                    <p>
+                        Meu objetivo é fortalecer minha autoridade no mercado jurídico, expandindo minha presença profissional sem abrir mão da ética, da transparência e do compromisso com cada cliente. Busco impactar positivamente a vida das pessoas, oferecendo orientação jurídica clara, acessível e segura, garantindo proteção patrimonial, equilíbrio nas relações contratuais e defesa efetiva dos direitos do consumidor.
+                    </p>
+                </div>
                 <div className="pt-6">
                     <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-block bg-aline-bg text-aline-dark px-8 py-4 rounded-full font-medium hover:bg-aline-light hover:text-white transition-colors">
                         Falar Diretamente com Aline
@@ -814,9 +814,12 @@ function App() {
                 <p className="text-stone-300 text-sm leading-relaxed">
                     Aline Rodrigues Advocacia e Consultoria.<br/>Proteção patrimonial com segurança jurídica e credibilidade.
                 </p>
-                <div className="flex space-x-4">
-                    <a href="https://instagram.com/dra.daobra" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-12 h-12 border border-stone-700 rounded-full flex items-center justify-center hover:bg-aline-light hover:text-white transition-colors">
-                        <iconify-icon icon="mdi:instagram" class="text-xl"></iconify-icon>
+                <div className="flex space-x-4 pt-2">
+                    <a href="https://instagram.com/dra.alinerodrigues.adv" target="_blank" rel="noreferrer" aria-label="Instagram" className="flex items-center gap-3 group text-stone-300 hover:text-white transition-colors">
+                        <div className="w-12 h-12 border border-stone-700 rounded-full flex items-center justify-center group-hover:bg-aline-light transition-colors">
+                            <iconify-icon icon="mdi:instagram" class="text-xl"></iconify-icon>
+                        </div>
+                        <span className="font-medium tracking-wide">@dra.alinerodrigues.adv</span>
                     </a>
                 </div>
             </div>
@@ -855,13 +858,26 @@ function App() {
 
         </div>
 
-        <div className="max-w-7xl mx-auto pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-stone-500">
-            <div className="space-y-1 text-center md:text-left">
-                <p>© {new Date().getFullYear()} Aline Rodrigues Advocacia. Todos os direitos reservados.</p>
-                <p className="opacity-60">Este site tem propósito informativo e captação de acordo com as normas da OAB.</p>
-            </div>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-stone-500 font-medium">
+            <p>&copy; {new Date().getFullYear()} Aline Rodrigues Advocacia. Todos os direitos reservados. | OAB/RJ 243.682</p>
+            <p className="mt-2 md:mt-0 flex items-center gap-1">Desenvolvido com <iconify-icon icon="solar:heart-bold" class="text-aline-light text-xs"></iconify-icon> por Lucas Lima</p>
+        </div>
+        <div className="max-w-7xl mx-auto pt-4 text-xs text-stone-600 text-center">
+            <p className="opacity-60">Este site tem propósito informativo e captação de acordo com as normas da OAB.</p>
         </div>
       </footer>
+
+      {/* Floating WhatsApp Button */}
+      <a 
+        href={whatsappUrl} 
+        target="_blank" 
+        rel="noreferrer" 
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] transition-all duration-300 group animate-bounce"
+        style={{ animationDuration: '3s' }}
+      >
+        <div className="absolute inset-0 w-full h-full rounded-full border-2 border-[#25D366] animate-ping opacity-75"></div>
+        <iconify-icon icon="ic:baseline-whatsapp" class="text-4xl relative z-10"></iconify-icon>
+      </a>
     </>
   );
 }
