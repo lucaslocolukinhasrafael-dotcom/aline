@@ -174,39 +174,39 @@ Possui documentos: ${formData.document}`;
   };
 
   return (
-    <section id="diagnostico" className="py-24 px-6 md:px-12 bg-aline-bg relative overflow-hidden border-t border-stone-200">
+    <section id="diagnostico" className="py-24 px-6 md:px-12 bg-aline-dark text-white relative overflow-hidden border-t border-stone-200 shadow-xl">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 relative">
         {/* PAS Copy Block */}
         <div className="space-y-6">
-          <span className="text-aline-primary font-bold tracking-widest uppercase text-xs">Proteção Imediata</span>
-          <h2 className="text-4xl md:text-5xl font-title text-aline-dark font-bold leading-tight">
+          <span className="text-aline-light font-bold tracking-widest uppercase text-xs">Proteção Imediata</span>
+          <h2 className="text-4xl md:text-5xl font-title text-white font-bold leading-tight">
             Seu patrimônio está em risco. O tempo está <span className="text-stone-400 font-light italic">contra você.</span>
           </h2>
-          <div className="w-16 h-px bg-stone-300"></div>
-          <p className="text-lg md:text-xl text-stone-600 font-body leading-relaxed pt-2">
-            Bancos e construtoras possuem equipes de advogados para proteger o lucro <strong className="text-aline-dark">deles</strong>. Tentar resolver sozinho é a receita para perder o que você demorou uma vida para construir.
+          <div className="w-16 h-px bg-aline-light/30"></div>
+          <p className="text-lg md:text-xl text-stone-300 font-body leading-relaxed pt-2">
+            Bancos e construtoras possuem equipes de advogados para proteger o lucro <strong className="text-white">deles</strong>. Tentar resolver sozinho é a receita para perder o que você demorou uma vida para construir.
           </p>
           
           <ul className="space-y-6 pt-6">
             <li className="flex items-start gap-4">
-              <span className="text-aline-primary mt-1 font-bold text-xl">•</span>
+              <span className="text-aline-light mt-1 font-bold text-xl">•</span>
               <div>
-                <strong className="text-aline-dark block text-lg font-bold">Clareza Imediata</strong>
-                <span className="text-stone-600">Descubra a gravidade real do seu problema hoje, sem jargões.</span>
+                <strong className="text-white block text-lg font-bold">Clareza Imediata</strong>
+                <span className="text-stone-400">Descubra a gravidade real do seu problema hoje, sem jargões.</span>
               </div>
             </li>
             <li className="flex items-start gap-4">
-              <span className="text-aline-primary mt-1 font-bold text-xl">•</span>
+              <span className="text-aline-light mt-1 font-bold text-xl">•</span>
               <div>
-                <strong className="text-aline-dark block text-lg font-bold">Análise de Urgência</strong>
-                <span className="text-stone-600">Saiba se o seu caso exige uma medida judicial rápida.</span>
+                <strong className="text-white block text-lg font-bold">Análise de Urgência</strong>
+                <span className="text-stone-400">Saiba se o seu caso exige uma medida judicial rápida.</span>
               </div>
             </li>
             <li className="flex items-start gap-4">
-              <span className="text-aline-primary mt-1 font-bold text-xl">•</span>
+              <span className="text-aline-light mt-1 font-bold text-xl">•</span>
               <div>
-                <strong className="text-aline-dark block text-lg font-bold">Estratégia de Blindagem</strong>
-                <span className="text-stone-600">Entenda o caminho exato para proteger seus bens.</span>
+                <strong className="text-white block text-lg font-bold">Estratégia de Blindagem</strong>
+                <span className="text-stone-400">Entenda o caminho exato para proteger seus bens.</span>
               </div>
             </li>
           </ul>
@@ -491,7 +491,7 @@ function App() {
       </section>
 
       {/* Marquee */}
-      <section className="border-y border-stone-300 py-4 bg-aline-bgDark overflow-hidden">
+      <section className="border-y border-stone-300 py-4 bg-aline-cream overflow-hidden">
         <div className="marquee-container w-full whitespace-nowrap overflow-hidden">
             <div className="animate-scroll inline-block">
                 <span className="text-2xl md:text-4xl font-title italic px-8 text-aline-light">•</span>
@@ -539,7 +539,7 @@ function App() {
       </section>
 
       {/* 2. Belief Reinforcement & News Section (Agitation) */}
-      <section className="py-24 px-6 md:px-12 bg-white border-t border-stone-200">
+      <section className="py-24 px-6 md:px-12 bg-aline-cream border-t border-stone-200">
         <div className="max-w-7xl mx-auto">
             {/* The Belief / The Enemy */}
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
@@ -579,7 +579,7 @@ function App() {
             </div>
 
             {/* Social Proof (Cases) - OAB Compliant Anonymized Proof */}
-            <div className="bg-aline-bgDark rounded-3xl p-8 md:p-12 shadow-inner border border-stone-200">
+            <div className="bg-white/50 rounded-3xl p-8 md:p-12 shadow-inner border border-stone-200">
                 <div className="text-center mb-10">
                     <h3 className="text-3xl font-title font-bold text-aline-dark mb-4">A intervenção certa muda o jogo.</h3>
                     <p className="text-stone-600 font-body">Enquanto a maioria aceita os abusos calada, nossos clientes tomam o controle da situação.</p>
@@ -732,7 +732,7 @@ function App() {
       </section>
 
       {/* 4. Processo / Como Funciona */}
-      <section className="py-24 px-6 md:px-12 bg-white">
+      <section className="py-24 px-6 md:px-12 bg-aline-cream">
         <div className="max-w-6xl mx-auto">
             <FadeIn>
               <div className="text-center mb-16">
@@ -751,8 +751,8 @@ function App() {
 
                 {/* Step 1 */}
                 <FadeIn delay={100} className="relative z-10">
-                   <div className="bg-aline-bg p-8 rounded-3xl text-center shadow-sm border border-stone-100 h-full hover:-translate-y-1 transition-transform">
-                       <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-aline-primary shadow-md mx-auto mb-6 text-2xl font-title font-bold">1</div>
+                   <div className="bg-white p-8 rounded-3xl text-center shadow-sm border border-stone-100 h-full hover:-translate-y-1 transition-transform">
+                       <div className="w-16 h-16 bg-aline-cream rounded-full flex items-center justify-center text-aline-primary shadow-sm mx-auto mb-6 text-2xl font-title font-bold">1</div>
                        <h4 className="text-xl font-bold text-aline-dark mb-4">Contato Inicial Rápido</h4>
                        <p className="text-stone-600 text-sm leading-relaxed">
                            Tudo começa de forma prática. Você nos chama pelo WhatsApp, explica brevemente a sua situação e nos envia os documentos para uma primeira análise.
@@ -762,8 +762,8 @@ function App() {
 
                 {/* Step 2 */}
                 <FadeIn delay={200} className="relative z-10">
-                   <div className="bg-aline-bg p-8 rounded-3xl text-center shadow-sm border border-stone-100 h-full hover:-translate-y-1 transition-transform">
-                       <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-aline-primary shadow-md mx-auto mb-6 text-2xl font-title font-bold">2</div>
+                   <div className="bg-white p-8 rounded-3xl text-center shadow-sm border border-stone-100 h-full hover:-translate-y-1 transition-transform">
+                       <div className="w-16 h-16 bg-aline-cream rounded-full flex items-center justify-center text-aline-primary shadow-sm mx-auto mb-6 text-2xl font-title font-bold">2</div>
                        <h4 className="text-xl font-bold text-aline-dark mb-4">Análise Prévia & Consulta</h4>
                        <p className="text-stone-600 text-sm leading-relaxed">
                            Dependendo da demanda, agendamos uma consulta jurídica online ou presencial. Aprofundamos o seu caso, tiramos suas dúvidas e mapeamos os riscos.
@@ -795,7 +795,7 @@ function App() {
       </section>
 
       {/* GMB Reviews Section (Prova Social - CARROSSEL) */}
-      <section id="depoimentos" className="py-24 bg-stone-50 border-t border-stone-200 overflow-hidden">
+      <section id="depoimentos" className="py-24 bg-aline-cream border-t border-stone-200 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
             <div className="text-center mb-12">
                 <div className="flex items-center justify-center gap-2 mb-4">
@@ -937,7 +937,7 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-6 md:px-12 bg-aline-bg">
+      <section className="py-20 px-6 md:px-12 bg-aline-cream">
         <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-title text-aline-dark font-bold text-center mb-12">Perguntas Frequentes</h2>
             <div className="space-y-4">
