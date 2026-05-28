@@ -664,7 +664,7 @@ function App() {
                           </div>
                           <h4 className="text-xl font-bold text-aline-dark mb-3">Direito Imobiliário</h4>
                           <p className="text-stone-600 text-sm leading-relaxed mb-6">
-                              Assessoria em compra e venda, regularização de imóveis, usucapião, leilões, distratos e proteção do seu patrimônio com segurança jurídica.
+                              Suporte estratégico em compra e venda, regularização documental, usucapião, leilões, locações e distratos. Foco na segurança das negociações imobiliárias para proteger seu patrimônio.
                           </p>
                       </div>
                       <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-aline-primary font-bold text-sm hover:text-aline-light transition-colors">
@@ -683,7 +683,7 @@ function App() {
                           </div>
                           <h4 className="text-xl font-bold text-aline-dark mb-3">Direito do Consumidor</h4>
                           <p className="text-stone-600 text-sm leading-relaxed mb-6">
-                              Defesa firme contra abusos de empresas, problemas com construtoras, atrasos de obra, indenizações e cobranças indevidas.
+                              Defesa firme contra problemas com construtoras, atraso de obra, revisão de contratos e cobranças indevidas. Atendimento ágil e focado na rápida resolução do conflito.
                           </p>
                       </div>
                       <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-aline-primary font-bold text-sm hover:text-aline-light transition-colors">
@@ -702,7 +702,7 @@ function App() {
                           </div>
                           <h4 className="text-xl font-bold text-aline-dark mb-3">Consultoria Preventiva</h4>
                           <p className="text-stone-600 text-sm leading-relaxed mb-6">
-                              Análise detalhada de contratos e due diligence para evitar que você assine documentos abusivos que gerem prejuízos no futuro.
+                              Análise detalhada de contratos e due diligence com linguagem clara e sem "juridiquês", antecipando problemas e reduzindo riscos antes de você assinar documentos abusivos.
                           </p>
                       </div>
                       <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-aline-primary font-bold text-sm hover:text-aline-light transition-colors">
@@ -793,6 +793,69 @@ function App() {
 
             </div>
 
+        </div>
+      </section>
+
+      {/* 4. Processo / Como Funciona */}
+      <section className="py-24 px-6 md:px-12 bg-white">
+        <div className="max-w-6xl mx-auto">
+            <FadeIn>
+              <div className="text-center mb-16">
+                  <h3 className="text-4xl md:text-5xl font-title text-aline-dark leading-tight font-bold mb-4">
+                      Como funciona o nosso atendimento?
+                  </h3>
+                  <p className="text-stone-600 text-lg max-w-2xl mx-auto">
+                      Um processo prático, rápido e acessível, desenhado para que você se sinta acolhido, orientado e seguro desde o primeiro contato.
+                  </p>
+              </div>
+            </FadeIn>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                {/* Connecting Line (Desktop) */}
+                <div className="hidden md:block absolute top-[4.5rem] left-[16%] right-[16%] h-px bg-stone-200 z-0 border-t border-dashed border-stone-300"></div>
+
+                {/* Step 1 */}
+                <FadeIn delay={100} className="relative z-10">
+                   <div className="bg-aline-bg p-8 rounded-3xl text-center shadow-sm border border-stone-100 h-full hover:-translate-y-1 transition-transform">
+                       <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-aline-primary shadow-md mx-auto mb-6 text-2xl font-title font-bold">1</div>
+                       <h4 className="text-xl font-bold text-aline-dark mb-4">Contato Inicial Rápido</h4>
+                       <p className="text-stone-600 text-sm leading-relaxed">
+                           Tudo começa de forma prática. Você nos chama pelo WhatsApp, explica brevemente a sua situação e nos envia os documentos para uma primeira análise.
+                       </p>
+                   </div>
+                </FadeIn>
+
+                {/* Step 2 */}
+                <FadeIn delay={200} className="relative z-10">
+                   <div className="bg-aline-bg p-8 rounded-3xl text-center shadow-sm border border-stone-100 h-full hover:-translate-y-1 transition-transform">
+                       <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-aline-primary shadow-md mx-auto mb-6 text-2xl font-title font-bold">2</div>
+                       <h4 className="text-xl font-bold text-aline-dark mb-4">Análise Prévia & Consulta</h4>
+                       <p className="text-stone-600 text-sm leading-relaxed">
+                           Dependendo da demanda, agendamos uma consulta jurídica online ou presencial. Aprofundamos o seu caso, tiramos suas dúvidas e mapeamos os riscos.
+                       </p>
+                   </div>
+                </FadeIn>
+
+                {/* Step 3 */}
+                <FadeIn delay={300} className="relative z-10">
+                   <div className="bg-aline-dark p-8 rounded-3xl text-center shadow-md border border-aline-dark h-full hover:-translate-y-1 transition-transform">
+                       <div className="w-16 h-16 bg-aline-primary rounded-full flex items-center justify-center text-white shadow-md mx-auto mb-6 text-2xl font-title font-bold">3</div>
+                       <h4 className="text-xl font-bold text-white mb-4">Estratégia & Resolução</h4>
+                       <p className="text-stone-300 text-sm leading-relaxed">
+                           Apresentamos a solução mais segura para proteger seu patrimônio. Atuamos com clareza, previsibilidade e sem "juridiquês" desnecessário.
+                       </p>
+                   </div>
+                </FadeIn>
+            </div>
+            
+            <FadeIn delay={500}>
+                <div className="mt-16 text-center">
+                   <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-aline-secondary text-aline-dark rounded-full font-bold text-sm hover:shadow-lg hover:scale-105 transition-all">
+                       <iconify-icon icon="ic:baseline-whatsapp" class="text-xl"></iconify-icon>
+                       Iniciar Atendimento Agora
+                   </a>
+                </div>
+            </FadeIn>
         </div>
       </section>
 
