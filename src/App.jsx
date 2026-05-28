@@ -279,8 +279,8 @@ Histórico: ${formData.document}`;
 
       {/* Modal Wrapper para o Quiz Ativo */}
       {step > 0 && (
-        <div className="fixed inset-0 z-[100] bg-aline-dark/90 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in overflow-y-auto">
-          <div className="relative w-full max-w-2xl bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-white/50 my-8">
+        <div className="fixed inset-0 z-[100] bg-aline-dark/95 flex items-center justify-center p-4 animate-fade-in overflow-y-auto">
+          <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-stone-200 my-8">
             <button onClick={() => setStep(0)} className="absolute top-6 right-6 text-stone-400 hover:text-aline-dark transition-colors z-10">
               <iconify-icon icon="solar:close-circle-linear" class="text-3xl"></iconify-icon>
             </button>
