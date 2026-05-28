@@ -247,7 +247,7 @@ Possui documentos: ${formData.document}`;
               <h3 className="text-3xl font-title text-aline-dark">Qual destas ameaças ao seu patrimônio está tirando o seu sono hoje?</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 {['Imóvel Irregular (Insegurança da posse)', 'Construtora cobrando juros/taxas abusivas', 'Ameaça de Leilão ou Perda do Imóvel', 'Medo de cair em golpe ao comprar imóvel', 'Outro risco urgente'].map((theme) => (
-                  <button key={theme} onClick={() => handleNext('theme', theme)} className="p-4 text-left border-2 border-stone-200 rounded-xl hover:border-aline-dark hover:bg-aline-bgDark transition-all text-stone-700 font-medium">
+                  <button key={theme} onClick={() => handleNext('theme', theme)} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-stone-700 font-semibold">
                     {theme}
                   </button>
                 ))}
@@ -261,7 +261,7 @@ Possui documentos: ${formData.document}`;
               <h3 className="text-3xl font-title text-aline-dark">A Justiça não perdoa quem dorme no ponto. Há quanto tempo você corre esse risco?</h3>
               <div className="flex flex-col gap-4 mt-6">
                 {['Menos de 3 meses', 'O tempo está passando (3 a 12 meses)', 'Há anos (Risco Máximo)'].map((time) => (
-                  <button key={time} onClick={() => handleNext('time', time)} className="p-4 text-left border-2 border-stone-200 rounded-xl hover:border-aline-dark hover:bg-aline-bgDark transition-all text-stone-700 font-medium">
+                  <button key={time} onClick={() => handleNext('time', time)} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-stone-700 font-semibold">
                     {time}
                   </button>
                 ))}
@@ -275,7 +275,7 @@ Possui documentos: ${formData.document}`;
               <h3 className="text-3xl font-title text-aline-dark">Como essa situação de incerteza está impactando a sua vida hoje?</h3>
               <div className="flex flex-col gap-4 mt-6">
                 {['Medo constante de perder o dinheiro que investi', 'Sensação de estar sendo enganado ou passado para trás', 'Estou travado: não consigo vender ou aproveitar o que é meu', 'Insegurança total: não sei nem por onde começar a resolver'].map((concern) => (
-                  <button key={concern} onClick={() => handleNext('concern', concern)} className="p-4 text-left border-2 border-stone-200 rounded-xl hover:border-aline-dark hover:bg-aline-bgDark transition-all text-stone-700 font-medium">
+                  <button key={concern} onClick={() => handleNext('concern', concern)} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-stone-700 font-semibold">
                     {concern}
                   </button>
                 ))}
@@ -289,7 +289,7 @@ Possui documentos: ${formData.document}`;
               <h3 className="text-3xl font-title text-aline-dark">Para entendermos o seu momento: você já buscou alguma orientação profissional sobre este caso?</h3>
               <div className="flex flex-col gap-4 mt-6">
                 {['Sim, mas ainda não sinto total segurança na estratégia', 'Ainda não, estou buscando a orientação correta agora'].map((doc) => (
-                  <button key={doc} onClick={() => handleNext('document', doc)} className="p-4 text-left border-2 border-stone-200 rounded-xl hover:border-aline-dark hover:bg-aline-bgDark transition-all text-stone-700 font-medium">
+                  <button key={doc} onClick={() => handleNext('document', doc)} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-stone-700 font-semibold">
                     {doc}
                   </button>
                 ))}
@@ -351,7 +351,7 @@ Possui documentos: ${formData.document}`;
                 </p>
               </div>
               <p className="text-md text-stone-600 font-body mb-2">O próximo passo é realizar um alinhamento direto para traçar o seu plano de ação.</p>
-              <a href={generateWhatsAppUrl()} target="_blank" rel="noreferrer" className="inline-block mt-4 w-full px-10 py-5 bg-aline-dark text-aline-bg font-bold rounded-xl shadow-xl hover:bg-aline-light transition-all duration-300 flex items-center justify-center gap-3 text-lg hover:-translate-y-1">
+              <a href={generateWhatsAppUrl()} target="_blank" rel="noreferrer" className="inline-block mt-4 w-full px-10 py-5 bg-[#25D366] text-white font-bold rounded-xl shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] transition-all duration-300 flex items-center justify-center gap-3 text-lg">
                 <iconify-icon icon="mdi:whatsapp" class="text-3xl"></iconify-icon>
                 Falar com a Dra. Aline Agora
               </a>
