@@ -534,22 +534,20 @@ function App() {
       </section>
 
       {/* Intro / Philosophy (Epiphany Bridge - Moodboard Style) */}
-      <section className="relative py-32 px-6 md:px-12 overflow-hidden bg-aline-dark">
+      <section className="relative py-32 px-6 md:px-12 overflow-hidden bg-aline-cream">
         {/* Architectural / Scale Background matching Moodboard */}
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Building Architecture" className="w-full h-full object-cover opacity-[0.15] grayscale" />
-          <div className="absolute inset-0 bg-gradient-to-t from-aline-dark via-aline-dark/80 to-transparent"></div>
-          {/* Golden Silk overlay hint */}
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-aline-light/10 to-transparent mix-blend-overlay"></div>
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Building Architecture" className="w-full h-full object-cover opacity-[0.05] grayscale" />
+          <div className="absolute inset-0 bg-gradient-to-t from-aline-cream via-aline-cream/80 to-transparent"></div>
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
-            <iconify-icon icon="solar:scale-linear" class="text-5xl text-aline-light mb-4 drop-shadow-md"></iconify-icon>
-            <h2 className="text-4xl md:text-6xl text-white leading-tight font-bold">
-                Tornamos a justiça <span className="italic font-title text-aline-light drop-shadow-sm">acessível</span> para que você volte a ter paz.
+            <iconify-icon icon="solar:scale-linear" class="text-5xl text-aline-primary mb-4 drop-shadow-sm"></iconify-icon>
+            <h2 className="text-4xl md:text-6xl text-aline-dark leading-tight font-bold">
+                Tornamos a justiça <span className="italic font-title text-aline-primary drop-shadow-sm">acessível</span> para que você volte a ter paz.
             </h2>
-            <div className="w-24 h-px bg-aline-light/50 mx-auto"></div>
-            <p className="text-lg md:text-xl text-stone-300 leading-relaxed font-light">
+            <div className="w-24 h-px bg-aline-primary/30 mx-auto"></div>
+            <p className="text-lg md:text-xl text-stone-600 leading-relaxed font-light">
                 Você não precisa entender de leis complexas ou perder noites de sono preocupado(a) com contratos mal feitos ou abusos de grandes empresas. Nossa missão é assumir esse fardo por você, traduzindo o "juridiquês" em soluções claras e devolvendo o que é seu por direito.
             </p>
         </div>
@@ -944,7 +942,7 @@ function App() {
                     </p>
                 </div>
 
-                <div className="pt-4">
+                <div className="pt-4 flex justify-center w-full">
                     <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex bg-aline-primary text-white px-8 py-4 rounded-full font-bold hover:bg-aline-dark shadow-md transition-colors items-center gap-2">
                         Falar Diretamente com Aline <iconify-icon icon="ic:baseline-whatsapp" class="text-xl text-green-400"></iconify-icon>
                     </a>
