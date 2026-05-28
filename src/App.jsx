@@ -973,14 +973,6 @@ function App() {
                       Aline Rodrigues Advocacia e Consultoria.<br/>Proteção patrimonial com segurança jurídica e credibilidade.
                   </p>
                 </div>
-                <div className="flex space-x-4 pt-2">
-                    <a href="https://instagram.com/dra.daobra" target="_blank" rel="noreferrer" aria-label="Instagram" className="flex items-center gap-3 group text-stone-300 hover:text-white transition-colors">
-                        <div className="w-12 h-12 border border-stone-700 rounded-full flex items-center justify-center group-hover:bg-aline-light transition-colors">
-                            <iconify-icon icon="mdi:instagram" class="text-xl"></iconify-icon>
-                        </div>
-                        <span className="font-medium tracking-wide">@dra.daobra</span>
-                    </a>
-                </div>
             </div>
             
             <div className="col-span-1">
@@ -995,9 +987,14 @@ function App() {
             <div className="col-span-1 md:col-span-2">
                 <h3 className="font-title text-xl mb-6 text-aline-light font-bold">Contato & Localização</h3>
                 <ul className="space-y-3 text-sm text-stone-300 mb-6">
-                    <li className="flex items-center"><iconify-icon icon="solar:phone-linear" class="mr-2 text-lg"></iconify-icon> (21) 96650-9969</li>
-                    <li className="flex items-center"><iconify-icon icon="solar:letter-linear" class="mr-2 text-lg"></iconify-icon> aline.elem.adv@gmail.com</li>
-                    <li className="flex items-start"><iconify-icon icon="solar:map-point-linear" class="mr-2 mt-1 text-lg"></iconify-icon> 
+                    <li className="flex items-center"><iconify-icon icon="solar:phone-linear" class="mr-2 text-lg text-aline-light"></iconify-icon> (21) 96650-9969</li>
+                    <li className="flex items-center"><iconify-icon icon="solar:letter-linear" class="mr-2 text-lg text-aline-light"></iconify-icon> aline.elem.adv@gmail.com</li>
+                    <li className="flex items-center">
+                        <a href="https://instagram.com/dra.daobra" target="_blank" rel="noreferrer" className="flex items-center hover:text-white transition-colors group">
+                            <iconify-icon icon="mdi:instagram" class="mr-2 text-lg text-aline-light group-hover:text-white transition-colors"></iconify-icon> @dra.daobra
+                        </a>
+                    </li>
+                    <li className="flex items-start"><iconify-icon icon="solar:map-point-linear" class="mr-2 mt-1 text-lg text-aline-light"></iconify-icon> 
                         <span>Av das Americas 4200 – Bloco 01<br/>Sala 305 – Barra da Tijuca – RJ<br/>CEP: 22.640-907</span>
                     </li>
                 </ul>
