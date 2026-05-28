@@ -438,7 +438,7 @@ function App() {
             {/* Text Column */}
             <div className="flex flex-col items-start text-left lg:pr-8 lg:col-span-7 xl:col-span-8">
               <FadeIn delay={100}>
-                <h1 className="text-[2.8rem] md:text-[5rem] lg:text-[5.5rem] xl:text-[6.2rem] leading-[0.95] tracking-tighter font-title text-aline-dark mb-4 md:mb-6 w-full">
+                <h1 className="text-[2rem] md:text-[5rem] lg:text-[5.5rem] xl:text-[6.2rem] leading-[1.1] md:leading-[0.95] tracking-tight md:tracking-tighter font-title text-aline-dark mb-4 md:mb-6 w-full">
                   Atuação estratégica para <span className="font-bold text-aline-primary">blindar seu patrimônio</span> e garantir seus direitos, <span className="font-bold">sem juridiquês.</span>
                 </h1>
               </FadeIn>
