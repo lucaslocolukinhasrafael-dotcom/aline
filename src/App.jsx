@@ -427,7 +427,7 @@ function App() {
   return (
     <>
       {/* Navigation */}
-      <nav className="hidden md:flex sticky top-0 z-50 w-full px-8 py-4 justify-between items-center bg-aline-cream border-b border-stone-200 shadow-sm transition-all duration-300 relative">
+      <nav className="flex sticky top-0 z-50 w-full px-6 md:px-8 py-4 justify-between items-center bg-aline-cream border-b border-stone-200 shadow-sm transition-all duration-300 relative">
         <div className="flex items-center gap-3">
           <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-10 md:h-12 w-auto opacity-90" />
         </div>
@@ -435,13 +435,13 @@ function App() {
         <div className="hidden md:flex items-center space-x-10 text-sm font-bold tracking-wide text-aline-primary absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <a href="#solucoes" className="hover:text-aline-secondary transition-colors">Serviços</a>
           <a href="#sobre" className="hover:text-aline-secondary transition-colors">Visão</a>
-          <a href="#sobre" className="hover:text-aline-secondary transition-colors">Sobre a Advogada</a>
+          <a href="#sobre" className="hover:text-aline-secondary transition-colors">A Advogada</a>
           <a href="#depoimentos" className="hover:text-aline-secondary transition-colors">Localização</a>
         </div>
 
-        <div className="hidden md:flex items-center">
-          <a href="#diagnostico" className="px-6 py-2.5 bg-white border border-stone-300 text-aline-primary font-bold rounded-full hover:bg-stone-50 transition-colors duration-300 shadow-sm flex items-center gap-2 text-sm">
-            Diagnóstico Gratuito
+        <div className="flex items-center">
+          <a href="#diagnostico" className="px-5 md:px-6 py-2.5 bg-white border border-stone-300 text-aline-primary font-bold rounded-full hover:bg-stone-50 transition-colors duration-300 shadow-sm flex items-center gap-2 text-xs md:text-sm">
+            Diagnóstico
             <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
           </a>
         </div>
@@ -466,12 +466,12 @@ function App() {
               <FadeIn delay={500}>
                 <div className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
                   <a href="#diagnostico" className="w-full sm:w-auto px-8 py-4 bg-aline-secondary text-aline-dark rounded-full font-bold text-sm hover:shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2">
-                    Entrar em contato
+                    Fazer Diagnóstico
                     <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
                   </a>
                   <a href={whatsappUrl} target="_blank" rel="noreferrer" className="w-full sm:w-auto px-6 py-4 text-aline-dark font-bold text-sm hover:text-aline-primary transition-colors flex items-center justify-center gap-2">
                     <iconify-icon icon="ic:baseline-whatsapp" class="text-2xl text-green-600"></iconify-icon>
-                    Meu WhatsApp
+                    Atendimento Online
                   </a>
                 </div>
               </FadeIn>
@@ -486,7 +486,6 @@ function App() {
                     alt="Dra. Aline Rodrigues" 
                     width="600"
                     height="800"
-                    fetchpriority="high"
                     className="w-full h-full object-cover object-[center_top]"
                   />
                 </div>
@@ -494,10 +493,10 @@ function App() {
               
               {/* Glassmorphism Card */}
               <FadeIn delay={700} direction="up">
-                <div className="absolute bottom-4 left-4 lg:bottom-16 lg:-left-12 bg-white/80 backdrop-blur-md border border-white p-6 rounded-2xl shadow-2xl z-20 w-64">
+                <div className="absolute bottom-10 left-0 lg:bottom-16 lg:-left-12 bg-white/95 backdrop-blur-md border border-white p-6 rounded-2xl shadow-2xl z-30 w-72">
                   <span className="text-sm font-bold text-aline-dark mb-1 block">Atendimento focado em</span>
                   <span className="text-3xl font-title text-aline-primary font-bold">Resultados</span>
-                  <p className="text-xs text-stone-700 mt-2 font-medium">Mais de 100 casos atendidos protegendo o seu patrimônio.</p>
+                  <p className="text-xs text-stone-700 mt-2 font-medium">Mais de 100 casos atendidos com estratégia e proteção do seu patrimônio.</p>
                 </div>
               </FadeIn>
             </div>
@@ -639,61 +638,73 @@ function App() {
         </div>
       </section>
 
-      {/* 3. Services Section (Reference Full Layout) */}
-      <section id="solucoes" className="bg-white py-24 px-6 md:px-12 border-t border-stone-100">
-        <div className="max-w-4xl mx-auto flex flex-col items-center">
+      {/* 3. Services Section (Bento Grid Layout) */}
+      <section id="solucoes" className="bg-aline-bg py-24 px-6 md:px-12 border-t border-stone-200">
+        <div className="max-w-6xl mx-auto">
             <FadeIn>
-              <h3 className="text-3xl md:text-5xl font-title text-aline-dark mb-16 leading-tight text-center max-w-3xl">
-                  Compromisso e atuação em diversas áreas do Direito para melhor atendê-lo.
-              </h3>
+              <div className="text-center mb-16">
+                  <h3 className="text-4xl md:text-5xl font-title text-aline-dark leading-tight max-w-3xl mx-auto font-bold mb-4">
+                      Áreas de Atuação
+                  </h3>
+                  <p className="text-stone-600 text-lg">Soluções seguras e estratégicas para proteger o seu patrimônio.</p>
+              </div>
             </FadeIn>
             
-            <div className="w-full space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Imobiliário Card */}
                 <FadeIn delay={100}>
-                  <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start py-8 border-b border-stone-100">
-                      <span className="text-lg font-bold text-stone-300 mt-1 md:w-16">01</span>
-                      <div className="flex-1">
-                          <h4 className="text-xl font-bold text-aline-dark mb-3 uppercase tracking-wide">Direito Imobiliário e Contratos</h4>
-                          <p className="text-stone-600 text-base leading-relaxed">
-                              Compra e venda, due diligence, revisão de contratos abusivos e assessoria para investidores garantindo total segurança na negociação.
+                  <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all border border-stone-100 h-full flex flex-col justify-between group">
+                      <div>
+                          <div className="flex justify-between items-start mb-6">
+                              <iconify-icon icon="solar:home-bold" class="text-4xl text-aline-dark"></iconify-icon>
+                              <span className="text-stone-300 font-medium text-lg">01</span>
+                          </div>
+                          <h4 className="text-xl font-bold text-aline-dark mb-3">Direito Imobiliário</h4>
+                          <p className="text-stone-600 text-sm leading-relaxed mb-6">
+                              Assessoria em compra e venda, regularização de imóveis, usucapião, leilões, distratos e proteção do seu patrimônio com segurança jurídica.
                           </p>
                       </div>
+                      <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-aline-primary font-bold text-sm hover:text-aline-light transition-colors">
+                          Saber mais <iconify-icon icon="solar:arrow-right-linear" class="text-lg group-hover:translate-x-1 transition-transform"></iconify-icon>
+                      </a>
                   </div>
                 </FadeIn>
                 
+                {/* Consumidor Card */}
                 <FadeIn delay={200}>
-                  <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start py-8 border-b border-stone-100">
-                      <span className="text-lg font-bold text-stone-300 mt-1 md:w-16">02</span>
-                      <div className="flex-1">
-                          <h4 className="text-xl font-bold text-aline-dark mb-3 uppercase tracking-wide">Regularização e Usucapião</h4>
-                          <p className="text-stone-600 text-base leading-relaxed">
-                              Atuação judicial e extrajudicial para regularização registral e cartorária, garantindo que você seja o verdadeiro proprietário do imóvel.
+                  <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all border border-stone-100 h-full flex flex-col justify-between group">
+                      <div>
+                          <div className="flex justify-between items-start mb-6">
+                              <iconify-icon icon="solar:cart-large-bold" class="text-4xl text-aline-dark"></iconify-icon>
+                              <span className="text-stone-300 font-medium text-lg">02</span>
+                          </div>
+                          <h4 className="text-xl font-bold text-aline-dark mb-3">Direito do Consumidor</h4>
+                          <p className="text-stone-600 text-sm leading-relaxed mb-6">
+                              Defesa firme contra abusos de empresas, problemas com construtoras, atrasos de obra, indenizações e cobranças indevidas.
                           </p>
                       </div>
+                      <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-aline-primary font-bold text-sm hover:text-aline-light transition-colors">
+                          Saber mais <iconify-icon icon="solar:arrow-right-linear" class="text-lg group-hover:translate-x-1 transition-transform"></iconify-icon>
+                      </a>
                   </div>
                 </FadeIn>
 
+                {/* Consultoria Card */}
                 <FadeIn delay={300}>
-                  <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start py-8 border-b border-stone-100">
-                      <span className="text-lg font-bold text-stone-300 mt-1 md:w-16">03</span>
-                      <div className="flex-1">
-                          <h4 className="text-xl font-bold text-aline-dark mb-3 uppercase tracking-wide">Leilões e Construtoras</h4>
-                          <p className="text-stone-600 text-base leading-relaxed">
-                              Defesa contra execuções e leilões extrajudiciais, além de atuação firme contra atraso de obras e cobranças indevidas de construtoras.
+                  <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all border border-stone-100 h-full flex flex-col justify-between group">
+                      <div>
+                          <div className="flex justify-between items-start mb-6">
+                              <iconify-icon icon="solar:shield-check-bold" class="text-4xl text-aline-dark"></iconify-icon>
+                              <span className="text-stone-300 font-medium text-lg">03</span>
+                          </div>
+                          <h4 className="text-xl font-bold text-aline-dark mb-3">Consultoria Preventiva</h4>
+                          <p className="text-stone-600 text-sm leading-relaxed mb-6">
+                              Análise detalhada de contratos e due diligence para evitar que você assine documentos abusivos que gerem prejuízos no futuro.
                           </p>
                       </div>
-                  </div>
-                </FadeIn>
-
-                <FadeIn delay={400}>
-                  <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start py-8">
-                      <span className="text-lg font-bold text-stone-300 mt-1 md:w-16">04</span>
-                      <div className="flex-1">
-                          <h4 className="text-xl font-bold text-aline-dark mb-3 uppercase tracking-wide">Direito do Consumidor</h4>
-                          <p className="text-stone-600 text-base leading-relaxed">
-                              Defesa efetiva dos seus direitos em relações de consumo, incluindo indenizações, ações contra bancos e cobranças abusivas.
-                          </p>
-                      </div>
+                      <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-aline-primary font-bold text-sm hover:text-aline-light transition-colors">
+                          Saber mais <iconify-icon icon="solar:arrow-right-linear" class="text-lg group-hover:translate-x-1 transition-transform"></iconify-icon>
+                      </a>
                   </div>
                 </FadeIn>
             </div>
@@ -798,8 +809,9 @@ function App() {
       <DiagnosticQuiz />
 
       {/* Founder Section */}
-      <section id="sobre" className="py-24 px-6 md:px-12 bg-aline-cream text-aline-dark">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section id="sobre" className="py-24 px-6 md:px-12 bg-aline-cream text-aline-dark relative overflow-hidden">
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-aline-light/10 rounded-full blur-3xl"></div>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
             <div className="relative">
                 <div className="absolute -bottom-6 -left-6 w-full h-full bg-aline-light rounded-2xl opacity-20"></div>
                 <img 
@@ -812,23 +824,29 @@ function App() {
                 />
             </div>
             
-            <div className="space-y-8">
-                <span className="text-aline-light uppercase tracking-widest text-sm font-semibold font-body">Sobre a Dra. Aline</span>
-                <h2 className="text-5xl md:text-6xl font-title leading-tight font-bold">Expertise e Compromisso</h2>
-                <div className="text-lg md:text-xl text-stone-300 font-light leading-relaxed space-y-4">
+            <div className="space-y-6">
+                <span className="text-aline-light uppercase tracking-widest text-sm font-semibold font-body">Por trás da Advocacia</span>
+                <h2 className="text-4xl md:text-5xl font-title leading-tight font-bold">Muito prazer, sou <br/><span className="italic text-aline-primary font-light">Aline Rodrigues.</span></h2>
+                
+                <div className="text-lg text-stone-700 font-body leading-relaxed space-y-5 bg-white/50 p-8 rounded-2xl border border-stone-200 shadow-sm backdrop-blur-sm relative">
+                    <iconify-icon icon="solar:pen-new-square-linear" class="absolute top-4 right-4 text-3xl text-aline-light/30"></iconify-icon>
                     <p>
-                        <strong className="text-white">Visão:</strong> Ser reconhecida como referência em advocacia imobiliária e do consumidor no estado do Rio de Janeiro, por meio de uma atuação estratégica, humanizada e altamente resolutiva.
+                        Eu acredito que a justiça não deve ser distante e nem fria. Quando você me procura, sei que ali existe uma preocupação real com o seu patrimônio, com a sua família e com o seu futuro.
                     </p>
                     <p>
-                        Consolidar uma advocacia pautada na excelência técnica, no atendimento próximo e personalizado e na busca por soluções seguras e eficazes, tanto na prevenção quanto na resolução de conflitos envolvendo imóveis, contratos, financiamentos, construtoras, leilões, vícios construtivos e relações de consumo.
+                        Minha atuação em <strong>Direito Imobiliário e do Consumidor</strong> nasceu exatamente disso: da vontade de trazer <em>segurança</em> e <em>tranquilidade</em> para pessoas que muitas vezes estão prestes a assinar o contrato de suas vidas ou enfrentando problemas desgastantes com construtoras e bancos.
                     </p>
                     <p>
-                        Meu objetivo é fortalecer minha autoridade no mercado jurídico, expandindo minha presença profissional sem abrir mão da ética, da transparência e do compromisso com cada cliente. Busco impactar positivamente a vida das pessoas, oferecendo orientação jurídica clara, acessível e segura, garantindo proteção patrimonial, equilíbrio nas relações contratuais e defesa efetiva dos direitos do consumidor.
+                        Aqui, você não é apenas mais um número de processo. Meu foco é entender o seu problema a fundo, evitar o "juridiquês" desnecessário e desenhar uma <strong>estratégia clara, humana e altamente técnica</strong> para proteger aquilo que é seu por direito.
+                    </p>
+                    <p className="font-bold text-aline-dark pt-2 font-title italic text-xl">
+                        Conte comigo para blindar o seu patrimônio.
                     </p>
                 </div>
-                <div className="pt-6">
-                    <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-block bg-aline-bg text-aline-dark px-8 py-4 rounded-full font-medium hover:bg-aline-light hover:text-white transition-colors">
-                        Falar Diretamente com Aline
+
+                <div className="pt-4">
+                    <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex bg-aline-primary text-white px-8 py-4 rounded-full font-bold hover:bg-aline-dark shadow-md transition-colors items-center gap-2">
+                        Falar Diretamente com Aline <iconify-icon icon="ic:baseline-whatsapp" class="text-xl text-green-400"></iconify-icon>
                     </a>
                 </div>
             </div>
