@@ -438,12 +438,12 @@ function App() {
             {/* Text Column */}
             <div className="flex flex-col items-start text-left lg:pr-8">
               <FadeIn delay={100}>
-                <h1 className="text-[2.2rem] md:text-[3.5rem] leading-[1.1] font-title text-aline-dark mb-4 md:mb-6 max-w-lg">
+                <h1 className="text-[2.4rem] md:text-[4rem] leading-[1.05] tracking-tight font-title text-aline-dark mb-4 md:mb-6 max-w-2xl">
                   Atuação estratégica para <span className="font-bold text-aline-primary">blindar seu patrimônio</span> e garantir seus direitos, <span className="font-bold">sem juridiquês.</span>
                 </h1>
               </FadeIn>
               <FadeIn delay={300}>
-                <p className="text-base md:text-lg text-stone-600 mb-8 max-w-lg font-body leading-relaxed">
+                <p className="text-base md:text-xl text-stone-600 mb-8 max-w-xl font-body leading-relaxed">
                   A segurança jurídica que você exige com o atendimento próximo e humano que você merece.
                 </p>
               </FadeIn>
