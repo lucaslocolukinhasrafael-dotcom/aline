@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import logoUrl from './assets/logo.svg';
-import heroImgUrl from './assets/aline-hero.webp';
+import heroImgUrl from './assets/aline-hero2.jpeg';
 import sobreImgUrl from './assets/aline-sobre.webp';
 
 const FAQItem = ({ question, answer }) => {
