@@ -247,7 +247,7 @@ Possui documentos: ${formData.document}`;
               <h3 className="text-3xl font-title text-aline-dark">Qual destas ameaças ao seu patrimônio está tirando o seu sono hoje?</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 {['Imóvel Irregular (Insegurança da posse)', 'Construtora cobrando juros/taxas abusivas', 'Ameaça de Leilão ou Perda do Imóvel', 'Medo de cair em golpe ao comprar imóvel', 'Outro risco urgente'].map((theme) => (
-                  <button key={theme} onClick={() => handleNext('theme', theme)} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-stone-700 font-semibold">
+                  <button key={theme} onClick={(e) => { e.currentTarget.blur(); handleNext('theme', theme); }} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:border-stone-200 focus:bg-white transition-all duration-300 text-stone-700 font-semibold">
                     {theme}
                   </button>
                 ))}
@@ -261,7 +261,7 @@ Possui documentos: ${formData.document}`;
               <h3 className="text-3xl font-title text-aline-dark">A Justiça não perdoa quem dorme no ponto. Há quanto tempo você corre esse risco?</h3>
               <div className="flex flex-col gap-4 mt-6">
                 {['Menos de 3 meses', 'O tempo está passando (3 a 12 meses)', 'Há anos (Risco Máximo)'].map((time) => (
-                  <button key={time} onClick={() => handleNext('time', time)} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-stone-700 font-semibold">
+                  <button key={time} onClick={(e) => { e.currentTarget.blur(); handleNext('time', time); }} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:border-stone-200 focus:bg-white transition-all duration-300 text-stone-700 font-semibold">
                     {time}
                   </button>
                 ))}
@@ -275,7 +275,7 @@ Possui documentos: ${formData.document}`;
               <h3 className="text-3xl font-title text-aline-dark">Como essa situação de incerteza está impactando a sua vida hoje?</h3>
               <div className="flex flex-col gap-4 mt-6">
                 {['Medo constante de perder o dinheiro que investi', 'Sensação de estar sendo enganado ou passado para trás', 'Estou travado: não consigo vender ou aproveitar o que é meu', 'Insegurança total: não sei nem por onde começar a resolver'].map((concern) => (
-                  <button key={concern} onClick={() => handleNext('concern', concern)} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-stone-700 font-semibold">
+                  <button key={concern} onClick={(e) => { e.currentTarget.blur(); handleNext('concern', concern); }} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:border-stone-200 focus:bg-white transition-all duration-300 text-stone-700 font-semibold">
                     {concern}
                   </button>
                 ))}
@@ -289,7 +289,7 @@ Possui documentos: ${formData.document}`;
               <h3 className="text-3xl font-title text-aline-dark">Para entendermos o seu momento: você já buscou alguma orientação profissional sobre este caso?</h3>
               <div className="flex flex-col gap-4 mt-6">
                 {['Sim, mas ainda não sinto total segurança na estratégia', 'Ainda não, estou buscando a orientação correta agora'].map((doc) => (
-                  <button key={doc} onClick={() => handleNext('document', doc)} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 text-stone-700 font-semibold">
+                  <button key={doc} onClick={(e) => { e.currentTarget.blur(); handleNext('document', doc); }} className="p-5 text-left border border-stone-200 bg-white rounded-xl hover:border-aline-primary hover:bg-aline-cream hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:border-stone-200 focus:bg-white transition-all duration-300 text-stone-700 font-semibold">
                     {doc}
                   </button>
                 ))}
