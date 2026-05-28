@@ -180,7 +180,7 @@ Possui documentos: ${formData.document}`;
         <div className="space-y-6">
           <span className="text-aline-light font-bold tracking-widest uppercase text-xs">Proteção Imediata</span>
           <h2 className="text-4xl md:text-5xl font-title text-white font-bold leading-tight">
-            Seu patrimônio está em risco. O tempo está <span className="text-stone-400 font-light italic">contra você.</span>
+            Seu patrimônio está em risco. O tempo está <span className="underline decoration-aline-light decoration-4 underline-offset-4">contra você.</span>
           </h2>
           <div className="w-16 h-px bg-aline-light/30"></div>
           <p className="text-lg md:text-xl text-stone-300 font-body leading-relaxed pt-2">
@@ -529,7 +529,7 @@ function App() {
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
             <iconify-icon icon="solar:scale-linear" class="text-5xl text-aline-primary mb-4 drop-shadow-sm"></iconify-icon>
             <h2 className="text-4xl md:text-6xl text-aline-dark leading-tight font-bold">
-                Tornamos a justiça <span className="italic font-title text-aline-primary drop-shadow-sm">acessível</span> para que você volte a ter paz.
+                Tornamos a justiça <span className="underline decoration-aline-primary decoration-4 underline-offset-8">acessível</span> para que você volte a ter paz.
             </h2>
             <div className="w-24 h-px bg-aline-primary/30 mx-auto"></div>
             <p className="text-lg md:text-xl text-stone-600 leading-relaxed font-light">
@@ -909,7 +909,7 @@ function App() {
             
             <div className="space-y-6">
                 <span className="text-aline-light uppercase tracking-widest text-sm font-semibold font-body">Por trás da Advocacia</span>
-                <h2 className="text-4xl md:text-5xl font-title leading-tight font-bold">Muito prazer, sou <br/><span className="italic text-aline-primary font-light">Aline Rodrigues.</span></h2>
+                <h2 className="text-4xl md:text-5xl font-title leading-tight font-bold">Muito prazer, sou <br/><span className="underline decoration-aline-primary decoration-4 underline-offset-8">Aline Rodrigues.</span></h2>
                 
                 <div className="text-lg text-stone-700 font-body leading-relaxed space-y-5 bg-white/50 p-8 rounded-2xl border border-stone-200 shadow-sm backdrop-blur-sm relative">
                     <iconify-icon icon="solar:pen-new-square-linear" class="absolute top-4 right-4 text-3xl text-aline-light/30"></iconify-icon>
@@ -922,7 +922,7 @@ function App() {
                     <p>
                         Aqui, você não é apenas mais um número de processo. Meu foco é entender o seu problema a fundo, evitar o "juridiquês" desnecessário e desenhar uma <strong>estratégia clara, humana e altamente técnica</strong> para proteger aquilo que é seu por direito.
                     </p>
-                    <p className="font-bold text-aline-dark pt-2 font-title italic text-xl">
+                    <p className="font-bold text-aline-dark pt-2 font-title text-xl underline decoration-aline-primary decoration-4 underline-offset-4">
                         Conte comigo para blindar o seu patrimônio.
                     </p>
                 </div>
