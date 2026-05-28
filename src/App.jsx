@@ -454,7 +454,7 @@ function App() {
             <div className="flex flex-col items-start text-left lg:pr-8">
               <FadeIn delay={100}>
                 <h1 className="text-[2.2rem] md:text-[3.5rem] leading-[1.1] font-title text-aline-dark mb-4 md:mb-6 max-w-lg">
-                  Advocacia full service com atendimento próximo e estratégico.
+                  Advocacia <span className="font-bold">full service</span> com atendimento <span className="font-bold text-aline-primary">próximo e estratégico.</span>
                 </h1>
               </FadeIn>
               <FadeIn delay={300}>
@@ -559,13 +559,14 @@ function App() {
       <section className="py-24 px-6 md:px-12 bg-white border-t border-stone-200">
         <div className="max-w-7xl mx-auto">
             {/* The Belief / The Enemy */}
-            <div className="text-center max-w-4xl mx-auto mb-16 space-y-6">
-                <span className="text-red-700 font-bold tracking-widest uppercase text-sm bg-red-50 px-4 py-2 rounded-full">A Realidade do Mercado</span>
-                <h2 className="text-4xl md:text-5xl font-title text-aline-dark font-bold leading-tight">
-                    O sistema não foi desenhado para proteger você. <span className="text-stone-400 font-light italic">Foi desenhado para proteger as empresas.</span>
+            <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
+                <span className="text-aline-primary font-bold tracking-widest uppercase text-xs">A Realidade do Mercado</span>
+                <h2 className="text-3xl md:text-4xl font-title text-aline-dark leading-tight">
+                    O sistema não foi desenhado para proteger você.<br className="hidden md:block" /> <span className="font-bold">Foi desenhado para proteger as empresas.</span>
                 </h2>
-                <p className="text-xl text-stone-600 font-body leading-relaxed">
-                    Construtoras blindam seus contratos. Bancos executam leilões de forma implacável. E quem tenta resolver as coisas de forma "amigável" ou sem assessoria especializada acaba pagando a conta mais alta de todas: <strong className="text-aline-dark">a perda do próprio lar.</strong>
+                <div className="w-16 h-px bg-stone-300 mx-auto"></div>
+                <p className="text-lg text-stone-600 font-body leading-relaxed">
+                    Construtoras blindam seus contratos, bancos executam leilões implacáveis e quem tenta resolver de forma "amigável" acaba pagando a conta mais alta: <strong className="text-aline-dark">a perda do próprio lar.</strong>
                 </p>
             </div>
 
