@@ -20,7 +20,7 @@ export default {
       fontFamily: {
         title: ['"Plus Jakarta Sans"', 'sans-serif'],
         body: ['"Plus Jakarta Sans"', 'sans-serif'],
-        highlight: ['"Cinzel"', 'serif'],
+        highlight: ['"Plus Jakarta Sans"', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
