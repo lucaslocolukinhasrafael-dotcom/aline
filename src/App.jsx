@@ -174,70 +174,55 @@ Possui documentos: ${formData.document}`;
   };
 
   return (
-    <section id="diagnostico" className="py-24 px-6 md:px-12 bg-aline-dark text-aline-bg relative overflow-hidden rounded-t-[3rem] shadow-2xl">
-      {/* Background shapes */}
-      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-aline-dark via-[#2a1c12] to-black -z-10"></div>
-      
+    <section id="diagnostico" className="py-24 px-6 md:px-12 bg-aline-bg relative overflow-hidden border-t border-stone-200">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 relative">
         {/* PAS Copy Block */}
-        <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 text-red-400 text-sm font-bold tracking-wide border border-red-500/20">
-            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-            Aviso de Risco Iminente
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-title font-bold leading-tight">
-            Seu patrimônio está em risco. O tempo está <span className="text-red-400">contra você.</span>
+        <div className="space-y-6">
+          <span className="text-aline-primary font-bold tracking-widest uppercase text-xs">Proteção Imediata</span>
+          <h2 className="text-4xl md:text-5xl font-title text-aline-dark font-bold leading-tight">
+            Seu patrimônio está em risco. O tempo está <span className="text-stone-400 font-light italic">contra você.</span>
           </h2>
-          <p className="text-lg md:text-xl text-stone-300 font-body leading-relaxed">
-            Construtoras, bancos e leiloeiros possuem exércitos de advogados trabalhando para proteger o lucro <strong className="text-white font-bold">deles</strong>, não os seus direitos. Esperar para ver o que acontece é a receita certa para perder o que você demorou uma vida para construir.
+          <div className="w-16 h-px bg-stone-300"></div>
+          <p className="text-lg md:text-xl text-stone-600 font-body leading-relaxed pt-2">
+            Bancos e construtoras possuem equipes de advogados para proteger o lucro <strong className="text-aline-dark">deles</strong>. Tentar resolver sozinho é a receita para perder o que você demorou uma vida para construir.
           </p>
           
-          <ul className="space-y-4 pt-4">
+          <ul className="space-y-6 pt-6">
             <li className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-aline-light/20 flex items-center justify-center text-aline-light mt-1">
-                <iconify-icon icon="solar:target-linear" class="text-xl"></iconify-icon>
-              </div>
+              <span className="text-aline-primary mt-1 font-bold text-xl">•</span>
               <div>
-                <strong className="text-white block text-lg font-bold">Clareza Imediata</strong>
-                <span className="text-stone-400 font-medium">Descubra a gravidade real do seu problema hoje, sem jargões jurídicos.</span>
+                <strong className="text-aline-dark block text-lg font-bold">Clareza Imediata</strong>
+                <span className="text-stone-600">Descubra a gravidade real do seu problema hoje, sem jargões.</span>
               </div>
             </li>
             <li className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-aline-light/20 flex items-center justify-center text-aline-light mt-1">
-                <iconify-icon icon="solar:stopwatch-linear" class="text-xl"></iconify-icon>
-              </div>
+              <span className="text-aline-primary mt-1 font-bold text-xl">•</span>
               <div>
-                <strong className="text-white block text-lg font-bold">Análise de Urgência</strong>
-                <span className="text-stone-400 font-medium">Saiba exatamente se o seu caso exige uma liminar nas próximas 24 horas.</span>
+                <strong className="text-aline-dark block text-lg font-bold">Análise de Urgência</strong>
+                <span className="text-stone-600">Saiba se o seu caso exige uma medida judicial rápida.</span>
               </div>
             </li>
             <li className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-aline-light/20 flex items-center justify-center text-aline-light mt-1">
-                <iconify-icon icon="solar:shield-check-linear" class="text-xl"></iconify-icon>
-              </div>
+              <span className="text-aline-primary mt-1 font-bold text-xl">•</span>
               <div>
-                <strong className="text-white block text-lg font-bold">Estratégia de Blindagem</strong>
-                <span className="text-stone-400 font-medium">Entenda o caminho exato para proteger seus bens e recuperar seu dinheiro.</span>
+                <strong className="text-aline-dark block text-lg font-bold">Estratégia de Blindagem</strong>
+                <span className="text-stone-600">Entenda o caminho exato para proteger seus bens.</span>
               </div>
             </li>
           </ul>
         </div>
 
         {/* Action Box */}
-        <div className="bg-aline-bg text-aline-dark p-8 md:p-12 rounded-3xl shadow-2xl relative border border-aline-light/20">
-          <div className="absolute -top-6 -right-6 w-24 h-24 bg-aline-light rounded-full opacity-20 blur-2xl"></div>
-          <div className="text-center space-y-6 relative z-10">
-            <div className="w-16 h-16 bg-aline-dark text-aline-light rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg shadow-aline-light/20">
-              <iconify-icon icon="solar:document-text-linear" class="text-3xl"></iconify-icon>
-            </div>
-            <h3 className="text-3xl font-title font-bold">Diagnóstico Estratégico Gratuito</h3>
+        <div className="bg-white text-aline-dark p-8 md:p-12 rounded-3xl shadow-sm border border-stone-200">
+          <div className="text-center space-y-6">
+            <h3 className="text-3xl font-title font-bold">Diagnóstico Gratuito</h3>
             <p className="text-stone-600 font-medium font-body leading-relaxed">
-              Responda a 4 perguntas rápidas (menos de 1 minuto) e descubra as chances reais do seu caso.
+              Responda a 4 perguntas rápidas e descubra as chances reais do seu caso.
             </p>
             <div className="pt-4">
-              <button onClick={() => { setStep(1); window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'quiz_started' }); }} className="w-full py-5 bg-gradient-to-r from-aline-dark to-[#8a723b] text-white font-bold rounded-xl hover:shadow-xl hover:shadow-aline-light/20 transition-all transform hover:-translate-y-1 text-xl flex items-center justify-center gap-2">
+              <button onClick={() => { setStep(1); window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'quiz_started' }); }} className="w-full py-5 bg-aline-primary text-white font-bold rounded-full hover:bg-aline-dark shadow-md transition-all text-lg flex items-center justify-center gap-2">
                 Iniciar Diagnóstico Agora
-                <iconify-icon icon="solar:arrow-right-linear" class="text-2xl"></iconify-icon>
+                <iconify-icon icon="solar:arrow-right-linear" class="text-xl"></iconify-icon>
               </button>
             </div>
             <p className="text-xs text-stone-500 uppercase tracking-widest font-bold mt-4 flex items-center justify-center gap-1">
@@ -454,12 +439,12 @@ function App() {
             <div className="flex flex-col items-start text-left lg:pr-8">
               <FadeIn delay={100}>
                 <h1 className="text-[2.2rem] md:text-[3.5rem] leading-[1.1] font-title text-aline-dark mb-4 md:mb-6 max-w-lg">
-                  Advocacia <span className="font-bold">full service</span> com atendimento <span className="font-bold text-aline-primary">próximo e estratégico.</span>
+                  Atuação estratégica para <span className="font-bold text-aline-primary">blindar seu patrimônio</span> e garantir seus direitos, <span className="font-bold">sem juridiquês.</span>
                 </h1>
               </FadeIn>
               <FadeIn delay={300}>
                 <p className="text-base md:text-lg text-stone-600 mb-8 max-w-lg font-body leading-relaxed">
-                  Adaptado às necessidades de quem busca segurança jurídica em questões imobiliárias e de consumo.
+                  A segurança jurídica que você exige com o atendimento próximo e humano que você merece.
                 </p>
               </FadeIn>
               
