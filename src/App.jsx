@@ -965,14 +965,14 @@ function App() {
       <footer className="bg-aline-dark text-aline-bg pt-20 pb-10 px-6 md:px-12 font-body">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-stone-700/50 pb-16">
             <div className="md:col-span-1 space-y-6">
-                <div className="flex items-center gap-2">
-                  <div className="inline-block">
-                    <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-20 md:h-24 w-auto drop-shadow-sm brightness-0 invert opacity-90" />
+                <div className="flex flex-row items-center gap-4">
+                  <div className="inline-block flex-shrink-0">
+                    <img src={logoUrl} alt="Aline Rodrigues Logo" className="h-14 md:h-16 w-auto drop-shadow-sm brightness-0 invert opacity-90" />
                   </div>
+                  <p className="text-stone-300 text-xs sm:text-sm leading-relaxed border-l border-stone-700 pl-4 py-1">
+                      Aline Rodrigues Advocacia e Consultoria.<br/>Proteção patrimonial com segurança jurídica e credibilidade.
+                  </p>
                 </div>
-                <p className="text-stone-300 text-sm leading-relaxed">
-                    Aline Rodrigues Advocacia e Consultoria.<br/>Proteção patrimonial com segurança jurídica e credibilidade.
-                </p>
                 <div className="flex space-x-4 pt-2">
                     <a href="https://instagram.com/dra.daobra" target="_blank" rel="noreferrer" aria-label="Instagram" className="flex items-center gap-3 group text-stone-300 hover:text-white transition-colors">
                         <div className="w-12 h-12 border border-stone-700 rounded-full flex items-center justify-center group-hover:bg-aline-light transition-colors">
